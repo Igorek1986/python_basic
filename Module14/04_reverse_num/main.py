@@ -26,14 +26,15 @@ def symbol(number):
     number = str(number_1) + '.' + str(number_2)
     return number
 
+
 first_n = input('\nВведите первое число: ')
 second_n = input("\nВведите второе число: ")
 
 first_revers = symbol(first_n)
 second_revers = symbol(second_n)
 
-
 print('Первое число наоборот: ', first_revers)
 print('Второе число наоборот: ', second_revers)
 print('Сумма: ', float(first_revers) + float(second_revers))
 
+# зачёт!
