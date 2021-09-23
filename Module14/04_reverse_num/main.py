@@ -12,6 +12,11 @@ def revers(number):
 def symbol(number):
     number_1 = ''
     flag = True
+
+    # TODO, внутри этой функции в цикле, стоит создавать две переменные из одного числа.
+    #  После чего, стоит применять revers к получившимся переменным.
+    #  В итоге, эта функция должна вернуть перевёрнутое число. =)
+
     for line in number:
         if flag:
             if line == '.':
@@ -22,6 +27,18 @@ def symbol(number):
 
 first_n = input('\nВведите первое число: ')
 second_n = input("\nВведите второе число: ")
+
+# Введите первое число: 123.12
+# Введите второе число: 654.65
+# Traceback (most recent call last):
+#     a = first_n = int(first_n)
+# ValueError: invalid literal for int() with base 10: '123.12'
+# TODO, предлагаю уйти в решении от множественного присваивания =)
+#  В нашу функцию, как вариант, можно сращу передавать строку.
+a = first_n = int(first_n)
+print(a)
+b = int(second_n)
+
 
 first_number_2 = symbol(first_n)
 second_number_2 = symbol(second_n)
