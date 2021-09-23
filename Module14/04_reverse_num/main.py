@@ -37,3 +37,5 @@ second_revers = symbol(second_n)
 print('Первое число наоборот: ', first_revers)
 print('Второе число наоборот: ', second_revers)
 print('Сумма: ', float(first_revers) + float(second_revers))
+
+# зачёт!
