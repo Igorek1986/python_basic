@@ -1,10 +1,10 @@
-def min_denominator(number):
-    while number != 0:
-        number %= 10
-    return number
-
-
-
+def num_denominator(number):
+    denominator = 1
+    while denominator < number:
+        denominator = denominator + 1
+        if number % denominator == 0:
+            return denominator
 
 n = int(input('Введите число: '))
-print(number)
+min_denominator = num_denominator(n)
+print('Наименьший делитель, отличный от единицы:', min_denominator)
