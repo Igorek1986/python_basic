@@ -6,3 +6,5 @@ for i in range(n):
     if cell < i:
         unsuitable_list.append(cell)
 print('\nНеподходящие значения:', unsuitable_list)
+
+# зачёт!
