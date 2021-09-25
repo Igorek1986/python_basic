@@ -10,12 +10,18 @@ for i in range(count):
 K = int(input('Сдвиг: '))
 print('Изначальный список:', number_list)
 
+a = number_list[count - K]
 
-for i in range(count):
-    for i2 in range(count):
-        number_list[i] = number_list[i - K]
-        break
+for k in range(1, K):
+    for i in range(len(number_list)):
+        number_list[count - i - 1] = number_list[count - i - 2]
 
+# for i in range(len(number_list) - 1):
+#     number_list[count - i - K] = number_list[count - i - K - 1]
+#     # for i2 in range(len(number_list) - 1):
+#     #     # number_list[i] = number_list[i + K] #= number_list[count - i - K], number_list[i]
+#     #     break
+number_list[0] = a
 
 print('Сдвинутый список:', number_list)
 # print('Сдвинутый список:', change_number_list)
