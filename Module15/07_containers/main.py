@@ -12,12 +12,12 @@ while True:
     else:
         print('Введен не правильный вес!')
 
-
 new_weight_container = int(input('\nВведите вес нового контейнера: '))
-
 
 for i in weight_list:
     place += 1
     if i < new_weight_container:
         break
 print('\nНомер, куда встанет новый контейнер:', place)
+
+# зачёт!

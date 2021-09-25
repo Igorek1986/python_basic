@@ -11,3 +11,4 @@ for i in range(len(world) // 2):
 if flag == True:
     print('\nСлово является палиндромом')
 
+# зачёт!
