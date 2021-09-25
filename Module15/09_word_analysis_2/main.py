@@ -1,13 +1,13 @@
-# world = input('Введите слово: ')
-# unique_count = 0
-# length = len(world)
-#
-# for letter in world:
-#     count = 0
-#     for letter1 in world:
-#         if letter1 == letter:
-#             count += 1
-#     if count == 1:
-#         unique_count += 1
-#
-# print('Кол-во уникальных букв:', unique_count)
+world = input('Введите слово: ')
+flag = False
+
+for i in range(len(world) // 2):
+    if world[i] != world[-1 - i]:
+        print('\nСлово не является палиндромом')
+        break
+    else:
+        flag = True
+
+if flag == True:
+    print('\nСлово является палиндромом')
+
