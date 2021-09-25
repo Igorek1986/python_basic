@@ -1,11 +1,9 @@
 count = int(input('Длинна списка: '))
 number_list = []
 
-
 for i in range(count):
     number = int(input('Введите число: '))
     number_list.append(number)
-
 
 K = int(input('Сдвиг: '))
 print('Изначальный список:', number_list)
@@ -21,3 +19,5 @@ for _ in range(K):
 number_list[0] = a
 
 print('Сдвинутый список:', number_list)
+
+# зачёт!
