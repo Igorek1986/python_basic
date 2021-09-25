@@ -9,8 +9,8 @@ for i in range(number):
     if num_max <= graphics_card:
         num_max = graphics_card
 
-#  предлагаю уйти от вычислений элементов по их индексам и в цикле ниже, идти сразу по списку видеокарт. =)
-
+# TODO предлагаю уйти от вычислений элементов по их индексам и в цикле ниже, идти сразу по списку видеокарт. =)
+#  Без использования range.
 for i in range(number):
     if NVIDIA_list[i] != num_max:
         new_NVIDIA_list.append(NVIDIA_list[i])

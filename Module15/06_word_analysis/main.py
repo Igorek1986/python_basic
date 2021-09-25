@@ -1,7 +1,6 @@
 world = input('Введите слово: ')
 unique_count = 0
 
-
 for letter in world:
     count = 0
     for letter1 in world:
@@ -10,5 +9,6 @@ for letter in world:
     if count == 1:
         unique_count += 1
 
-
 print('Кол-во уникальных букв:', unique_count)
+
+# зачёт!
