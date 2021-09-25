@@ -1,20 +1,13 @@
 NVIDIA_list = []
 new_NVIDIA_list = []
 number = int(input('Кол-во видеокарт: '))
-
+num_max = 0
 
 for i in range(number):
     graphics_card = int(input(str(i + 1) + ' Видеокарта: '))
     NVIDIA_list.append(graphics_card)
-    num_max = graphics_card
-
-
-# TODO, Предлагаю сократить количество циклов, тем самым ускорить работу кода.
-#  Стоит попробовать вычислить максимальное значение в первом цикле с запросом ввода пользователя.
-
-for i in NVIDIA_list:
-    if num_max <= i:
-        num_max = i
+    if num_max <= NVIDIA_list[i]:
+        num_max = NVIDIA_list[i]
 
 
 for i in range(number):

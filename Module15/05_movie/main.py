@@ -3,17 +3,14 @@ films_list = ['Крепкий орешек', 'Назад в будущее', 'Т
          'Мементо', 'Отступники', 'Деревня']
 favorite_list = []
 
+
 films = input('Название фильма: ')
 while films != 'end':
-    # TODO, для сокращения количества вычислений элементов по индексам, предлагаю в этом цикле идти сразу по массиву без конструкции range + len.
-    for index in range(len(films_list)):
-        if films_list[index] == films:
-            favorite_list.append(films_list[index])
-            # TODO, если фильм найден, из вложенного цикла стоит выйти.
-            #  Таким образом, сократим количество лишних итераций цикла.
-            #  Код отработает немного быстрее.
-
-
+    for index in films_list:
+        if index == films:
+            favorite_list.append(index)
+            break
     films = input('Название фильма: ')
-print(favorite_list)
 
+
+print(favorite_list)
