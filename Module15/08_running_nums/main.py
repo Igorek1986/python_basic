@@ -1,6 +1,5 @@
 count = int(input('Длинна списка: '))
 number_list = []
-change_number_list = []
 
 
 for i in range(count):
@@ -9,15 +8,20 @@ for i in range(count):
 
 
 K = int(input('Сдвиг: '))
+print('Изначальный список:', number_list)
 
 
 for i in range(count):
-    change_number_list.append(number_list[i - K])
+    for i2 in range(count):
+        number_list[i] = number_list[i - K]
+        break
 
-print('Изначальный список:', number_list)
-print('Сдвинутый список:', change_number_list)
 
-# TODO, таким образом в изначальном списке сдвиг не происходит.
+print('Сдвинутый список:', number_list)
+# print('Сдвинутый список:', change_number_list)
+
+
+#  таким образом в изначальном списке сдвиг не происходит.
 #  Предлагаю попробовать решить задание без дополнительного списка и производить сдвиг сразу в начальном списке,
 #  который получился после ввода пользователя.
 #  Возможно сможем решить вложенными циклами.

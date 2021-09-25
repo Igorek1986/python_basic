@@ -1,13 +1,14 @@
 count_container = int(input('Кол-во контейнеров: '))
 weight_list = []
 place = 0
-for i in range(count_container):
-    # TODO, стоит добавить в решение цикл while True.
-    #  Иначе, при некорректном вводе, вес контейнера, всё равно добавляется в список.
+count = 0
+while True:
     weight_container = int(input('Введите вес контейнера: '))
     if 0 < weight_container < 200:
-        count_container -= 1
+        count += 1
         weight_list.append(weight_container)
+        if count == count_container:
+            break
     else:
         print('Введен не правильный вес!')
 
