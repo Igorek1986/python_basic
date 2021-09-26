@@ -8,3 +8,16 @@ for i in range(len(unsorted_list) - 1):
 print('Отсортированный список:', unsorted_list)
 
 # зачёт!
+
+#Разбор ДЗ
+
+def selection_sort(my_list):
+    for i_mn in range(len(my_list)):
+        for curr in range(len(my_list)):
+            if my_list[curr] < my_list[i_mn]:
+                my_list[curr], my_list[i_mn] = my_list[i_mn], my_list[curr]
+
+
+nums = [1, 4, -3, 0, 10, -127]
+selection_sort(nums)
+print(nums)
