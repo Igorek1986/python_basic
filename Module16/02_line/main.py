@@ -14,13 +14,12 @@ class_b = []
 line_class(class_a, 160, 176, 2)
 line_class(class_b, 162, 180, 3)
 
-
 print('\nПервый класс', class_a)
 print('Второй класс', class_b)
-
 
 class_a.extend(class_b)
 selection_sort(class_a)
 
-
 print('\nОбъединенный класс', class_a)
+
+# зачёт!

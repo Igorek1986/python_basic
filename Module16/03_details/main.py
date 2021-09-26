@@ -1,10 +1,14 @@
 def selection_sort(shop_list, detail):
     count = 0
+
     for i_detal in range(len(shop_list)):
         if shop_list[i_detal].count(detail):
             count += 1
     return count
 
+# TODO, предлагаю решить задание всего за один цикл for без использования range + len.
+#  один вложенный список, это одна деталь. По идее метод count, в решении будет лишним.
+#  таким образом, мы сократим количество функций и циклов в решении. =)
 
 def selection_price(shop_list, detail):
     summ_price = 0
