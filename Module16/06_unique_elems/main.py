@@ -12,3 +12,11 @@ second_list = [2, 4, 6, 3, 3, 2, 1]
 #     n = int(input('\nВведите второй список из 7 элементов: '))
 #     second_list.append(n)
 
+
+first_list.extend(second_list)
+for i in first_list:
+    while first_list.count(i) > 1:
+        first_list.remove(i)
+
+
+print('Новый первый список с уникальными элементами:', first_list)
