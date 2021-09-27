@@ -20,13 +20,12 @@ violator_songs = [
 
 favorite_list = []
 
-
 num_count = int(input('Сколько песен выбрать? '))
-
 
 for i in range(num_count):
     title_song = input('Название ' + str(i + 1) + ' песни: ')
     favorite_list.append(selection_sort(violator_songs, title_song))
 
-
 print('Общее время звучания песен:', round(sum(favorite_list), 2), 'минут')
+
+# зачёт!
