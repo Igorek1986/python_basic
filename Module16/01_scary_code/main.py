@@ -1,28 +1,26 @@
 def deletion(num_list, num):
-    # TODO, Предлагаю сократить количество итераций цикла и идти в цикле исходя из количества чисел в списке.
-    #  В таком случае, условный оператор будет лишним =)
-    for i in num_list:
-        if i == num:
-            a.remove(num)
+    for i in range(num_list.count(num)):
+        num_list.remove(num)
+
 
 def added(num_list):
-    a.extend(num_list)
+    main_list.extend(num_list)
 
-a = [1, 5, 3]
-b = [1, 5, 1, 5]
-c = [1, 3, 1, 5, 3, 3]
-# TODO, Пожалуйста, поправьте названия переменных, состоящие из одной буквы.
-#  Названия должны отражать суть содержания переменных.
 
-added(b)
+main_list = [1, 5, 3]
+side_list_1 = [1, 5, 1, 5]
+side_list_2 = [1, 3, 1, 5, 3, 3]
 
-print('Кол-во цифр 5 при первом объединении:', a.count(5))
 
-deletion(a, 5)
-added(c)
+added(side_list_1)
 
-print('Кол-во цифр 3 при втором объединении:', a.count(3))
-print('Итоговый список:', a)
+print('Кол-во цифр 5 при первом объединении:', main_list.count(5))
+
+deletion(main_list, 5)
+added(side_list_2)
+
+print('Кол-во цифр 3 при втором объединении:', main_list.count(3))
+print('Итоговый список:', main_list)
 #
 # # for i in b:
 # #     a.append(i)
@@ -43,5 +41,3 @@ print('Итоговый список:', a)
 #         t += 1
 # print(t)
 # print(d)
-
-
