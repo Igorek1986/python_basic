@@ -1,28 +1,11 @@
 def selection_sort(shop_list, detail):
+    count = 0
+    summ_price = 0
     for i_detal in shop_list:
         if i_detal[0] == detail:
-            shop_sort.extend(i_detal)
-
-# TODO, внутри функции selection_sort, стоит создать две переменные.
-#  - Для подсчёта суммы стоимостей деталей.
-#  - Для подсчёта количества деталей.
-#  В таком случае, стоит вернуть обе переменные из функции при помощи return.
-#  Чтобы создать две переменные из одного возврата функции, можно реализовать код следующим образом
-#  a, b = func()
-#  Список shop_sort, получится лишним. =)
-
-
-
-# , предлагаю решить задание всего за один цикл for без использования range + len.
-#  один вложенный список, это одна деталь. По идее метод count, в решении будет лишним.
-#  таким образом, мы сократим количество функций и циклов в решении. =)
-
-# def selection_price(shop_list, detail):
-#     summ_price = 0
-#     for i_detal in range(len(shop_list)):
-#         if shop_list[i_detal].count(detail):
-#             summ_price += shop_list[i_detal][1]
-#     return summ_price
+            count += 1
+            summ_price += i_detal[1]
+    return [count, summ_price]
 
 
 shop = [['каретка', 1200], ['шатун', 1000], ['седло', 300],
@@ -32,9 +15,8 @@ shop_sort = []
 
 title_detail = input('Название детали: ')
 
-total_count = selection_sort(shop, title_detail)
+total_count, total_summ = selection_sort(shop, title_detail)
 
-# total_summ = selection_sort(shop, title_detail)
 
-print('\nКол-во деталей -', shop_sort.count(title_detail))
-# print('Общая стоимость -', total_summ)
+print('\nКол-во деталей -', total_count)
+print('Общая стоимость -', total_summ)
