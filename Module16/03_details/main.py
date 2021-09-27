@@ -5,7 +5,7 @@ def selection_sort(shop_list, detail):
         if i_detal[0] == detail:
             count += 1
             summ_price += i_detal[1]
-    return [count, summ_price]  # Лучше просто return count, summ_price
+    return count, summ_price  # Лучше просто return count, summ_price
 
 
 shop = [['каретка', 1200], ['шатун', 1000], ['седло', 300],

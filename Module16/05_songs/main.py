@@ -1,18 +1,9 @@
 def selection_sort(song_list, song):
     time = 0
-    song_name = ''
     for i_song in song_list:
         if i_song[0] == song:
-            song_name = song
             time += i_song[1]
-    return [song_name, time]
-
-
-def time_song(song_list):
-    total_time = 0
-    for i_time in song_list:
-        total_time += i_time[1]
-    return round(total_time, 2)
+    return time
 
 
 violator_songs = [
@@ -32,13 +23,10 @@ favorite_list = []
 
 num_count = int(input('Сколько песен выбрать? '))
 
-# TODO, пожалуйста, обратите внимание, т.к. названия песен нигде не используются,
-#  Возможно, одна из функций получилась лишней. Предлагаю решить задание за одну функцию, с всего лишь одним циклом for.
 
 for i in range(num_count):
     title_song = input('Название ' + str(i + 1) + ' песни: ')
     favorite_list.append(selection_sort(violator_songs, title_song))
 
-time_playlist = time_song(favorite_list)
 
-print('Общее время звучания песен:', str(time_playlist), 'минут')
+print('Общее время звучания песен:', round(sum(favorite_list), 2), 'минут')
