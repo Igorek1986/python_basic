@@ -15,7 +15,7 @@ second_list = [2, 4, 6, 3, 3, 2, 1]
 
 first_list.extend(second_list)
 for i in first_list:
-    first_list.count(i)
+    first_list.count(i)  # TODO, строка кода получилась лишней, т.к. результат её работы, в коде не используется.
     for i2 in range(first_list.count(i) - 1):
         first_list.remove(i)
 
