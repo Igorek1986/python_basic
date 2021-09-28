@@ -21,3 +21,4 @@ for i in range(len(foot_size)):
             skates_size.remove(skates_size[i2])
             break
 print('\nНаибольшее кол-во людей, которые могут взять ролики:', count_skates - len(skates_size))
+
