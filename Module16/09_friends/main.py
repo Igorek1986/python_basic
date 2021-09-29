@@ -15,4 +15,6 @@ for i in range(1, count_debt + 1):
         print('Самому себе занимать нельзя!')
 print('\nБаланс друзей:')
 for i in range(1, count_friends + 1):
-    print(str(i), ' :', friend_list[i - 1])
+    print(str(i), ' :', friend_list[i - 1])  # Возможно, str получилось лишним. =)
+
+# зачёт!
