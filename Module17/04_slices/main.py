@@ -1,6 +1,5 @@
 alphabet = 'abcdefg'
 
-
 print('1:', alphabet[:])
 print('2:', alphabet[::-1])
 print('3:', alphabet[::2])
@@ -12,3 +11,4 @@ print('8:', alphabet[-3:])
 print('9:', alphabet[3:5])
 print('10:', alphabet[-3:-5:-1])
 
+# зачёт!
