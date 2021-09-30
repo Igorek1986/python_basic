@@ -18,19 +18,15 @@ number_list = []
 revers_list = []
 answer_list = []
 
-
 for i in range(count):
     number = int(input('Введите число: '))
     number_list.append(number)
 
-
 revers_list.extend(number_list)
 revers_list = reverse(revers_list)
 
-
 print('\nПоследовательность: ', end='')
 ans_print(number_list)
-
 
 for i in range(len(number_list)):
     for _ in range(len(revers_list)):
@@ -41,12 +37,11 @@ for i in range(len(number_list)):
             number_list.remove(number_list[0])
             revers_list.remove(revers_list[-1])
 
-
 reverse(answer_list)
-
 
 print('\nНужно приписать чисел:', number_list[0])
 
-
 print('Сами числа:', end=' ')
 ans_print(answer_list)
+
+# зачёт!
