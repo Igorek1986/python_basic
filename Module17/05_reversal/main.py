@@ -1,10 +1,9 @@
 word = 'ooohokihkkk'
-word_new = word[word.index('h') + 1:word.rindex('h')]
+word_new = word[:word.index('h')] + word[word.rindex('h'):word.index('h'):-1] + word[word.rindex('h'):]
 
 
 print('Слово: ', word)
-print('Разворот между первой h и последней: ', word_new[::-1])
+print('Разворот между первой h и последней: ', word_new) #Можно не делать word_new, сразу заменить в word
 
-# TODO, пожалуйста, обратите внимание, отбрасывать начало и конец строки не нужно.
-#  необходимо просто перевернуть середину между "h" =)
-#  При вводе ooohokihkkk, должны получить ooohikohkkk
+
+
