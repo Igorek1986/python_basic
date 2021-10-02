@@ -7,3 +7,5 @@ print(compressed_list)
 
 compressed_list = [i for i in N_list if i != 0]
 print(compressed_list)
+
+# зачёт!
