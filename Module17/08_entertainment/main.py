@@ -24,3 +24,5 @@ for i in range(num_throw):
 
 
 print(result)
+
+# TODO, пожалуйста, реализуйте вывод как в примере. =)
