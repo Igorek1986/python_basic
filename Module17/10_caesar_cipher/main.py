@@ -12,3 +12,5 @@ cipher_list = [alphabet[(alphabet.index(i) + shift) % 33] if i != ' ' else ' ' f
 for i in range(len(cipher_list)):
     cipher += cipher_list[i]
 print('Зашифрованное сообщение:', cipher)
+
+# зачёт!
