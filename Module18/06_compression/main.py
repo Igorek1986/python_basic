@@ -17,3 +17,4 @@ def compression_line(line):
 line_str = 'aaAAbbсaaaA'
 print('Закодированная строка:', compression_line(line_str))
 
+# зачёт!
