@@ -4,7 +4,7 @@ def check_password(passwd):
 
 password = input('Придумайте пароль: ')
 while True:
-    if check_password(password):
+    if check_password(password) and sum(1 for i in password if i.isdigit()) > 2:
         print('Это надёжный пароль!')
         break
     else:
