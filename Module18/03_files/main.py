@@ -12,5 +12,6 @@ def check_name(file, start_f):
 name_file = input('Название файла: ')
 start_file = '@№$%^&*'
 
-
 check_name(name_file, start_file)
+
+# зачёт!
