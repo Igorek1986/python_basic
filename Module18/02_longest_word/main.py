@@ -1,6 +1,9 @@
+def long_word(lst):
+    lst = max(lst, key=len)
+    return lst, len(lst)
+
+
 word = 'Cамоe дли слово'
 word_list = word.split()
-print('Cамоe длинное слово: ', max(word_list, key=len), '-', len(max(word_list, key=len)), 'знаков')
-
-# TODO, предлагаю сократить количество вывозов функции max.
-#  Стоит запустить функцию один раз и далее, просто использовать в работе результат её возврата =)
+word_list = long_word(word_list)
+print('Cамоe длинное слово: ', word_list[0], '-', word_list[1], 'знаков')

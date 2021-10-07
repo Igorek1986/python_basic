@@ -3,20 +3,27 @@ def check_ip(address):
     if len(parts) != 4:
         print('Адрес - это четыре числа, разделенные точками')
         return
-
-    # TODO, Если переменную цикла используем в коде, её необходимо назвать так, чтобы название отражало суть содержания.
-    #  "i" не отражает. В нашем случае, "i" это не Индекс.
-    for i in parts:
-        if not i.isdigit():
-            print(i + '- не целое число')
+    for item_ip in parts:
+        if not item_ip.isdigit():
+            print(item_ip + '- не целое число')
             return
-    # TODO, цикл ниже получился лишним, предлагаю реализовать вторую проверку блоком elif.
-    for item in parts:
-        if not 0 <= int(item) <= 255:
-            print(item, 'превышает 255')
+        elif not 0 <= int(item_ip) <= 255:
+            print(item_ip, 'превышает 255')
             return
     print('IP-адрес корректен')
 
 
-ip_adress = '128.16.35.255'
+ip_adress = '128.16.35.a4'
+check_ip(ip_adress)
+
+
+ip_adress = '240.127.56.340'
+check_ip(ip_adress)
+
+
+ip_adress = '34.56.42,5'
+check_ip(ip_adress)
+
+
+ip_adress = '128.0.0.255'
 check_ip(ip_adress)
