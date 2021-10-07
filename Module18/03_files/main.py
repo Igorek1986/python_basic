@@ -2,6 +2,7 @@ name_file = input('Название файла: ')
 start_file = '@№$%^&*'
 
 
+# TODO, первым делом можно проверить окончание файла. =)
 for i in start_file:
     if name_file.startswith(i):
         print(name_file.startswith(i))

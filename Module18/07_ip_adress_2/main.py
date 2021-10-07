@@ -16,14 +16,13 @@ def check_ip(address):
 ip_adress = '128.16.35.a4'
 check_ip(ip_adress)
 
-
 ip_adress = '240.127.56.340'
 check_ip(ip_adress)
-
 
 ip_adress = '34.56.42,5'
 check_ip(ip_adress)
 
-
 ip_adress = '128.0.0.255'
 check_ip(ip_adress)
+
+# зачёт!
