@@ -5,10 +5,9 @@ def shift(lst):
     lst[0] = first_item
 
 
-first_lst = list('abcd')#list(input('Первая строка: '))
-second_list = list('cdab')#list(input('Вторая строка: '))
+first_lst = list('abcd')  # list(input('Первая строка: '))
+second_list = list('cdab')  # list(input('Вторая строка: '))
 count = 0
-
 
 while True:
     if first_lst == second_list:
@@ -20,3 +19,5 @@ while True:
     else:
         shift(second_list)
         count += 1
+
+# зачёт!
