@@ -32,7 +32,6 @@ def encoder(text, key):
 
 alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 
-
 chiper = 'vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fTjnqm tj' \
          ' scfuuf ibou fy/dpnqm yDpnqmf jt cfuufs boui dbufe/dpnqmj uGmb tj fuufsc ouib' \
          ' oftufe/ bstfTq jt uufscf uibo otf/ef uzSfbebcjmj vout/dp djbmTqf dbtft (ubsfo' \
@@ -48,5 +47,6 @@ chiper = 'vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fTjnq
 #          ' uzSfbebcjmj vout/dp djbmTqf dbtft'
 shift = -1
 
-
 print(encoder(chiper, shift))
+
+# зачёт!
