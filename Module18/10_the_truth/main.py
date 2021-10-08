@@ -2,10 +2,20 @@ def encoder(text, key):
     new_lst_encoder = ''
     new_lst_encoder_2 = ''
     for i in text:
-        if i != ' ' and i != '/' and i != '+' and i != '.':
+        if i != ' ' and i != '/' and i != '+' and i != '.' and i != '-' and i != '(' and i != '"':
             new_lst_encoder += alphabet[(alphabet.index(i) + shift) % 52]
         elif i == '/':
             new_lst_encoder += '/'
+        elif i == '+':
+            new_lst_encoder += '+'
+        elif i == '.':
+            new_lst_encoder += '.'
+        elif i == '-':
+            new_lst_encoder += '-'
+        elif i == '(':
+            new_lst_encoder += '('
+        elif i == '"':
+            new_lst_encoder += '"'
         else:
             new_lst_encoder += ' '
     i_shift = 3
@@ -21,6 +31,8 @@ def encoder(text, key):
 
 
 alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+
+
 chiper = 'vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fTjnqm tj' \
          ' scfuuf ibou fy/dpnqm yDpnqmf jt cfuufs boui dbufe/dpnqmj uGmb tj fuufsc ouib' \
          ' oftufe/ bstfTq jt uufscf uibo otf/ef uzSfbebcjmj vout/dp djbmTqf dbtft (ubsfo' \
@@ -31,9 +43,9 @@ chiper = 'vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fTjnq
          ' scfuuf ibou /ofwfs uipvhiBm fsofw jt fopgu cfuufs boui iu++sjh x/op gJ ifu nfoubujpojnqmf' \
          ' tj eibs pu mbjo-fyq tju( b bec /jefb Jg fui foubujpojnqmfn jt fbtz up bjo-fyqm ju znb cf b' \
          ' hppe jefb/ bnftqbdftO bsf pof ipoljoh sfbuh efbj .. fu(tm pe psfn gp tf"uip'
-chiper = 'vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fTjnqm tj scfuuf ibou fy/dpnqm' \
-         ' yDpnqmf jt cfuufs boui dbufe/dpnqmj uGmb tj fuufsc ouib oftufe/ bstfTq jt uufscf uibo otf/ef' \
-         ' uzSfbebcjmj vout/dp djbmTqf dbtft'
+# chiper = 'vujgvmCfb tj ufscfu ouib z/vhm jdjuFyqm jt fscfuu uibo jdju/jnqm fTjnqm tj scfuuf ibou fy/dpnqm' \
+#          ' yDpnqmf jt cfuufs boui dbufe/dpnqmj uGmb tj fuufsc ouib oftufe/ bstfTq jt uufscf uibo otf/ef' \
+#          ' uzSfbebcjmj vout/dp djbmTqf dbtft'
 shift = -1
 
 
