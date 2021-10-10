@@ -20,3 +20,8 @@ for i in range(1, num + 1):
 total_time = round(sum(my_song.values()), 2)
 
 print('Общее время звучания песен:', total_time, 'минут')
+
+# TODO, стоит добавить проверку наличия ключа в словаре или воспользоваться методом словарей get с параметром по умолчанию.
+#  Иначе, если ключа в словаре нет, получим ошибку.
+#  Немного подробней про метод get словарей, можно почитать тут:
+#  https://docs-python.ru/tutorial/operatsii-slovarjami-dict-python/metod-dict-get/
