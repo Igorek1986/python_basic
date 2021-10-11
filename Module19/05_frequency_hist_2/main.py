@@ -11,6 +11,8 @@ def histogram(string):
 def inverted(hist_dict):
     lst_hist = []
     inverted_dict = dict()
+    # TODO, предлагаю уйти от использования вложенных циклов, и реализовать цикле сразу по словарю hist_dict.
+    #  Таким образом, мы сможем немного ускорить работу нашего кода =)
     for i_key in range(1, max(hist_dict.values()) + 1):
         for j_sym in hist:
             if hist_dict[j_sym] == i_key:

@@ -44,9 +44,7 @@ data = {
     ]
 }
 
-
 print('Первоначальный словарь', data)
-
 
 data['ETH']['total_diff'] = 100
 data['tokens'][0]['fst_token_info']['name'] = 'doge'
@@ -54,5 +52,6 @@ data['ETH']['total_out'] = data['tokens'][0]['total_out']
 del data['tokens'][0]['total_out']
 data['tokens'][1]['sec_token_info']['total_price'] = data['tokens'][1]['sec_token_info'].pop('price')
 
-
 print('Итоговый словарь', data)
+
+# зачёт!
