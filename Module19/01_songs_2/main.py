@@ -15,13 +15,10 @@ my_song = {}
 num = int(input('Сколько песен выбрать? '))
 for i in range(1, num + 1):
     i_song = input('Название ' + str(i) + ' песни: ')
-    my_song[i_song] = violator_songs[i_song]
+    my_song[i_song] = violator_songs.get(i_song, 0)
+
 
 total_time = round(sum(my_song.values()), 2)
 
-print('Общее время звучания песен:', total_time, 'минут')
 
-# TODO, стоит добавить проверку наличия ключа в словаре или воспользоваться методом словарей get с параметром по умолчанию.
-#  Иначе, если ключа в словаре нет, получим ошибку.
-#  Немного подробней про метод get словарей, можно почитать тут:
-#  https://docs-python.ru/tutorial/operatsii-slovarjami-dict-python/metod-dict-get/
+print('Общее время звучания песен:', total_time, 'минут')
