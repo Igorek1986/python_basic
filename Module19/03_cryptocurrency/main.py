@@ -45,4 +45,10 @@ data = {
 }
 
 
-# TODO здесь писать код
+print(data)
+data['ETH']['total_diff'] = 100
+data['tokens'][0]['fst_token_info']['name'] = 'doge'
+
+# data['ETH']['total_out'] = data['tokens'][0]['fst_token_info']['total_out']
+print(data)
+
