@@ -11,3 +11,5 @@ for i_city in range(1, 4):
         print(f'Город {city} расположен в стране {dict_county[city]}.')
     else:
         print(f'По городу {city} данных нет.')
+
+# зачёт!

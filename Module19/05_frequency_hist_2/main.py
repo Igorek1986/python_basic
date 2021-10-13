@@ -21,15 +21,14 @@ def inverted(hist_dict):
 text = input('Введите текст: ')
 hist = histogram(text)
 
-
 print('\nОригинальный словарь частот:')
 for i_sym in sorted(hist.keys()):
     print(i_sym, ':', hist[i_sym])
 
-
 inverted_dictionary = inverted(hist)
-
 
 print('\nИнвертированный словарь частот:')
 for i in range(1, len(inverted_dictionary) + 1):
     print(i, ':', inverted_dictionary[i])
+
+# зачёт!
