@@ -25,13 +25,11 @@ store = {
 }
 
 
-# TODO, Если переменную цикла используем в коде, её необходимо назвать так, чтобы название отражало суть содержания.
-#  "i" не отражает. В нашем случае, "i" это не Индекс.
-for i in goods.keys():
+for product in goods.keys():
     summ_goods = 0
     q_count = 0
-    # TODO, переменную "j" тоже стоит переименовать =)
-    for j in store[goods[i]]:
-        summ_goods += j['quantity'] * j['price']
-        q_count += j['quantity']
-    print(f'{i} - {q_count} шт, стоимость {summ_goods} руб')
+    for quantity_price in store[goods[product]]:
+
+        summ_goods += quantity_price['quantity'] * quantity_price['price']
+        q_count += quantity_price['quantity']
+    print(f'{product} - {q_count} шт, стоимость {summ_goods} руб')
