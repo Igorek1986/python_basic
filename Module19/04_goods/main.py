@@ -24,12 +24,12 @@ store = {
     ],
 }
 
-
 for product in goods.keys():
     summ_goods = 0
     q_count = 0
     for quantity_price in store[goods[product]]:
-
         summ_goods += quantity_price['quantity'] * quantity_price['price']
         q_count += quantity_price['quantity']
     print(f'{product} - {q_count} шт, стоимость {summ_goods} руб')
+
+# зачёт!
