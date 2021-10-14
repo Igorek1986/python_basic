@@ -1,16 +1,21 @@
+def height(humans):
+    if humans not in pedigree:
+        return 0
+    else:
+        return 1
+
+
 numbers = int(input('Введите количество человек: '))
 pedigree = dict()
+height_p = dict()
 
 for i_numbers in range(1, numbers):
-    tree_element = input(f'{i_numbers} пара: ').split()
-    child, parent = tree_element[0], tree_element[1]
-    if parent in pedigree:
-        pedigree[parent][child] = None
-        if parent in pedigree[parent]:
-            pedigree[parent][child] = None
-        else:
-            pedigree[parent] = {child: None}
-    else:
-        pedigree[parent] = {child: None}
+    child, parent = input(f'{i_numbers} пара: ').split()
+    pedigree[child] = parent
 
-print(pedigree)
+
+for humans in set(pedigree.values()).union(pedigree.keys()):
+    height_p[humans] = height(humans)
+
+
+print(height_p)
