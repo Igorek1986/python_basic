@@ -25,3 +25,5 @@ for key, values in sorted(height_p.items()):
 
 # for key in sorted(height_p):
 #     print(key, height_p[key])
+
+# зачёт!
