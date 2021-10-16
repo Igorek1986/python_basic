@@ -3,6 +3,11 @@ def palindrome(string):
     count = 0
     for i_string in string:
         if i_string in string_dict:
+            # TODO Переменная count_letter получилась лишней, предлагаю прибавлять сразу к string_dict[i_string]. =)
+            #  Иначе, подсчёт данных, пока что, происходит не совсем корректно. К примеру:
+            #  "Введите строку: памадка
+            #  Можно сделать палиндромом"
+            #  По идее, не сделать
             count_letter += 1
             string_dict[i_string] = count_letter
         else:
