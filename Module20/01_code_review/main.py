@@ -46,6 +46,10 @@ def interests_len(my_dict):
     interests = []
     len_surname = 0
     for _, i_data in my_dict.items():
+        # TODO, т.к. interests это список и i_data['interests'] тоже список,
+        #  стоит использовать списковый метод для добавления всех элементов одного списка в другой.
+        #  Т.к. списковые методы оптимизированы и работают со списками быстрее чем конкатенация.
+        #  При помощи какого спискового метода можно добавить все элементы одного списка в другой? =)
         interests += (i_data['interests'])
         len_surname += len(i_data['surname'])
     return interests, len_surname
