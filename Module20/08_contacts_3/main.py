@@ -1,16 +1,12 @@
 def add_book(p_dict, string):
     surname_name = tuple(string[:2])
     tel = string[2]
-    # TODO, пожалуйста, обратите внимание, по словарю в цикле, стоит идти с .items().
-    #  Таким образом, мы сразу получаем и ключи и их значения.
-    #  Пример:
-    #  for key, value in example_dict.items()
     if surname_name in p_dict:
         print('Такая фамилия и имя уже есть в БД. Запись не произведена!')
     else:
         p_dict[surname_name] = tel
-        for i_person in p_dict:
-            print(f'{i_person[0]} {i_person[1]}: {p_dict[i_person]}')
+        for i_person, i_tel in p_dict.items():
+            print(f'{i_person[0]} {i_person[1]}: {i_tel}')
 
 
 def search_people(surname):

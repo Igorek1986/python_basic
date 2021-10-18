@@ -3,7 +3,7 @@ famaly = {('Сидоров', 'Никита'): 35,
           ('Сидоров', 'Павел'): 10,
           ('Петров', 'Олег'): 100}
 
-surname = 'Сидорова'.title()
+surname = input('ведите фамилию: ').title()
 if surname[-1] == 'а':
     surname = surname[:-1]
 
@@ -11,6 +11,3 @@ if surname[-1] == 'а':
 for people, age in famaly.items():
     if surname in people[0]:
         print(people[0], people[1], age)
-
-# TODO, пожалуйста, добавьте запрос ввода пользователя в решение.
-#  После добавления, поиск всё так же, должен быть не регистрозависимым. =)
