@@ -4,8 +4,10 @@ famaly = {('Сидоров', 'Никита'): 35,
           ('Петров', 'Олег'): 100}
 
 surname = 'Сидорова'.title()
+if surname[-1] == 'а':
+    surname = surname[:-1]
 
 
 for people, age in famaly.items():
-    if surname in people or surname[:-1] in people:
+    if surname in people[0]:
         print(people[0], people[1], age)
