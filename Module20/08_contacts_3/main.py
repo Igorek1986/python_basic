@@ -1,6 +1,10 @@
 def add_book(p_dict, string):
     surname_name = tuple(string[:2])
     tel = string[2]
+    # TODO, пожалуйста, обратите внимание, по словарю в цикле, стоит идти с .items().
+    #  Таким образом, мы сразу получаем и ключи и их значения.
+    #  Пример:
+    #  for key, value in example_dict.items()
     if surname_name in p_dict:
         print('Такая фамилия и имя уже есть в БД. Запись не произведена!')
     else:

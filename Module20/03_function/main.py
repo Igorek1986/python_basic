@@ -15,3 +15,8 @@ elem = 1
 
 new_tuple = tuple_i_i(first_tuple, elem)
 print(new_tuple)
+
+# TODO, предлагаю решить задание полностью без циклов.
+#  Предлагаю проверять количество элементов в массиве при помощи метода count.
+#  Позиции элементов можно найти при помощи метода index.
+#  https://www.geeksforgeeks.org/python-list-index/

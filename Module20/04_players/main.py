@@ -4,8 +4,8 @@ players = {
     ("Rob", "Bobbin"): (12, 8, 2)
 }
 
-
 lst_result = [(i + v) for i, v in players.items()]
 
-
 print(f'Результат: {lst_result}')
+
+# зачёт!

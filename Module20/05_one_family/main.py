@@ -11,3 +11,6 @@ if surname[-1] == 'а':
 for people, age in famaly.items():
     if surname in people[0]:
         print(people[0], people[1], age)
+
+# TODO, пожалуйста, добавьте запрос ввода пользователя в решение.
+#  После добавления, поиск всё так же, должен быть не регистрозависимым. =)

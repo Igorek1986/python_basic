@@ -22,5 +22,6 @@ def i_is_prime(data):
 # object_elements = [0, 1, 2, 3, 4, 5]
 object_elements = {1: 'n', 2: 2, 3: 3, 4: 4, 5: 5, 17: 7}
 
-
 print(i_is_prime(object_elements))
+
+# зачёт!
