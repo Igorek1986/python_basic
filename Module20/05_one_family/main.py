@@ -7,7 +7,8 @@ surname = input('ведите фамилию: ').title()
 if surname[-1] == 'а':
     surname = surname[:-1]
 
-
 for people, age in famaly.items():
     if surname in people[0]:
         print(people[0], people[1], age)
+
+# зачёт!

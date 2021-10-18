@@ -7,12 +7,13 @@ def tuple_i_i(data, sym):
         else:
             return data[start:]
     else:
-        return data[0:0]
+        return data[0:0]  # или просто (). =)
 
 
 first_tuple = (1, 5, 2, 3, 1, 3, 4, 5)
-elem = 6
-
+elem = 7
 
 new_tuple = tuple_i_i(first_tuple, elem)
 print(new_tuple)
+
+# зачёт!

@@ -19,7 +19,6 @@ def search_people(surname):
 
 phonebook = {}
 
-
 while True:
     action = input('\n"добавить контакт" или "найти человека", '
                    '"стоп" для выхода: ').lower()
@@ -35,3 +34,5 @@ while True:
         break
     else:
         print('Ошибка ввода команды!')
+
+# зачёт!

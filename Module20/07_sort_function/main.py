@@ -8,3 +8,5 @@ def sort(tuple_data):
 
 original_tuple = (3, 5, 1.5, 4)
 print(sort(original_tuple))
+
+# зачёт!
