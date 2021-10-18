@@ -10,6 +10,13 @@ def is_prime(number):
 
 
 def i_is_prime(data):
+    # TODO
+    #  1. Предлагаю попробовать решить задание в одну строку кода при помощи List comprehensions.
+    #  2. С enumerate в цикле правильно так "for index, value in enumerate(object):"
+    #  Это решение позволит сократить количество вычислений по индексам. =)
+    #  3. Предлагаю сократить количество повторяющегося кода.
+    #  К примеру, вынести цикл за пределы условного оператора, а в условном операторе определять только переменную,
+    #  по которой пойдём в цикле.
     if not isinstance(data, dict):
         for i in enumerate(data):
             if is_prime(i[0]):
@@ -26,6 +33,6 @@ def i_is_prime(data):
 object_elements = {1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 17: 7}
 
 
-lst_elements = []
+lst_elements = []  # TODO, список получился лишним. =)
 i_is_prime(object_elements)
 print(lst_elements)

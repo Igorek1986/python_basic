@@ -54,7 +54,11 @@ def interests_len(my_dict):
 for i_id, i_age in students.items():
     print(f"ID студента: {i_id} - возраст: {i_age['age']}")
 
+# Получить две переменные из одного возврата функции, если функция возвращает два значения, можно так
+#  a, b = func()
 
 data_stud = interests_len(students)
 print('Полный список интересов всех студентов:\n', data_stud[0])
 print('Общая длинна фамилий студентов:', data_stud[1])
+
+# зачёт!
