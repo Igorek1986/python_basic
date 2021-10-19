@@ -5,7 +5,6 @@ def winner_sort(winner):
 count_protocol = int(input('Сколько записей вносится в протокол? '))
 games = {}
 
-
 print('Записи (результат и имя): ')
 for i_protocol in range(count_protocol):
     protocol = input(f'{i_protocol + 1} запись: ').split()
@@ -16,17 +15,14 @@ for i_protocol in range(count_protocol):
     else:
         games[name] = [score, i_protocol + 1]
 
-
 games_lst = list(games.items())
 games_lst.sort(key=winner_sort, reverse=True)
-
 
 print('Итоги соревнований:')
 for i_winner in range(3):
     name = games_lst[i_winner][0]
     score = games_lst[i_winner][1][0]
     print(f'{i_winner + 1} место {name} - {score}')
-
 
 # 1 запись: 69485 Jack
 # 2 запись: 95715 qwerty
@@ -42,3 +38,5 @@ for i_winner in range(3):
 # 1 место. qwerty (197128)
 # 2 место. Alex (95715)
 # 3 место. Jack (95715)
+
+# зачёт! Молодец!
