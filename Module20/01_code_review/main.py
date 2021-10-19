@@ -20,25 +20,45 @@ students = {
 }
 
 
-def f(dict):
-    lst = []
-    string = ''
-    for i in dict:
-        lst += (dict[i]['interests'])
-        string += dict[i]['surname']
-    cnt = 0
-    for s in string:
-        cnt += 1
-    return lst, cnt
+# def f(dict):
+#     lst = []
+#     string = ''
+#     for i in dict:
+#         lst += (dict[i]['interests'])
+#         string += dict[i]['surname']
+#     cnt = 0
+#     for s in string:
+#         cnt += 1
+#     return lst, cnt
+#
+#
+# pairs = []
+# for i in students:
+#     pairs += (i, students[i]['age'])
+#
+#
+# my_lst = f(students)[0]
+# l = f(students)[1]
+# print(my_lst, l)
 
 
-pairs = []
-for i in students:
-    pairs += (i, students[i]['age'])
+def interests_len(my_dict):
+    interests = []
+    len_surname = 0
+    for _, i_data in my_dict.items():
+        interests.extend(i_data['interests'])
+        len_surname += len(i_data['surname'])
+    return interests, len_surname
 
 
-my_lst = f(students)[0]
-l = f(students)[1]
-print(my_lst, l)
+for i_id, i_age in students.items():
+    print(f"ID студента: {i_id} - возраст: {i_age['age']}")
 
-# TODO исправить код
+# Получить две переменные из одного возврата функции, если функция возвращает два значения, можно так
+#  a, b = func()
+
+data_stud = interests_len(students)
+print('Полный список интересов всех студентов:\n', data_stud[0])
+print('Общая длинна фамилий студентов:', data_stud[1])
+
+# зачёт!
