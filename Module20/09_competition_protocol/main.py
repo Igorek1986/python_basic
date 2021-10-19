@@ -1,3 +1,8 @@
+def winner_sort(scores, num):
+    test = num * 100000000 - scores
+    return test
+
+
 # count_protocol = int(input('Сколько записей вносится в протокол? '))
 # games = {}
 #
@@ -11,8 +16,13 @@
 #     else:
 #         games[name] = [score, i_protocol + 1]
 games = {'Jack': [95715, 6], 'qwerty': [197128, 5], 'Alex': [95715, 3], 'M': [95715, 9]}
+winner = {}
 
-
+for i, v in games.items():
+    i_score = v[0]
+    i_num = v[1]
+    sorted(games[i], key=winner_sort(i_score, i_num))
+print(winner)
 
 # TODO, необходимо произвести сортировку исходя из "количества очков" и "номера записи".
 #  Для этого, в key функции sorted необходимо передать функцию, которая будет принимать на вход
