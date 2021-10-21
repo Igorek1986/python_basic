@@ -11,6 +11,7 @@ word_str = 'abcdaaa'
 num = {1: 10, 2: 20, 3: 30, 4: 40}
 gen_obj = my_zip_min(word_str, num)
 
-
 for i_tuple in gen_obj:
     print(i_tuple)
+
+# зачёт!

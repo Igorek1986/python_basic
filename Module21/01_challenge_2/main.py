@@ -6,3 +6,5 @@ def numbers(num):
 
 num_int = 5
 numbers(num_int)
+
+# зачёт!

@@ -11,3 +11,5 @@ def move(n, x, y):
 
 number_disk = int(input('Введите количество дисков: '))
 move(number_disk, 1, 3)
+
+# зачёт!
