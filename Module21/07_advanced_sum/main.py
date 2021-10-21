@@ -1,17 +1,26 @@
+# def lst_open(lst):
+#     result = []
+#     for value in lst:
+#         if isinstance(value, list):
+#             result.extend(lst_open(value))
+#         else:
+#             result.append(value)
+#     return result
+
+
 def lst_open(lst):
-    result = []
+    lst_sum = 0
+    count = len(lst)
+    if count == 0:
+        return 1
     for value in lst:
         if isinstance(value, list):
-            result.extend(lst_open(value))
+            lst_sum += lst_open(value)
         else:
-            result.append(value)
-    return result
+            count -= 1
+            lst_sum += value
+    return lst_sum
 
 
 print('Ответ:', lst_open([[1, 2, [3]], [1], 3]))
 print('Ответ:', lst_open((1, 2, 3, 4, 5)))
-# TODO, вызов функции sum получился лишним. Из нашей функции стоит возвращать сразу сумму цифр =)
-
-
-# TODO, список получился лишний.
-#  Предлагаю использовать переменную счётчик, они занимают на порядок меньше места в памяти, чем списки =)
