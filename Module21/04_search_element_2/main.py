@@ -4,7 +4,7 @@ def find_key(structure, key, depth=2):
 
 	for sub_structure in structure.values():
 		if isinstance(sub_structure, dict):
-			if depth == 0:
+			if depth == 1:
 				return None
 
 			result = find_key(sub_structure, key, depth=depth)
@@ -48,9 +48,3 @@ if find_result:
 	print(find_result)
 else:
 	print('Такого ключа нет в структуре сайта на данной глубине ')
-
-# Какой ключ ищем? h2
-# Установить глубину поиска? Yes
-# Введите глубину: 2
-# Здесь будет мой заголовок
-# TODO, пожалуйста, обратите внимание, ключ h2 есть на 3ем уровне, на 2ом, мы найти его не должны. =)
