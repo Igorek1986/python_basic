@@ -17,3 +17,5 @@ def calculating_math_func(data, fact_dct={}):
 
 print(calculating_math_func(10))
 print(calculating_math_func(15))
+
+# зачёт!

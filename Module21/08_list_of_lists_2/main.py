@@ -20,3 +20,5 @@ def lst_open(lst):
 
 
 print('Ответ:', lst_open(nice_list))
+
+# зачёт!
