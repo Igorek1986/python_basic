@@ -1,29 +1,24 @@
 import copy
 
-# TODO, Пожалуйста, обратите внимание, обращений по конкретным ключам словаря, в наших функциях быть не должно.
-#  Стоит написать уникальную функцию.
-#  Предлагаю сначала реализовать функцию для замены данных по при помощи рекурсии.
-#  Есть несколько вариантов решения.
-#  1. передавать в функцию "структуру сайта", "тег" значение, которого необходимо поменять, "новое значение тега".
-#  в таком случае, рекурсивно необходимо идти по словарю,
-#  искать нужный ключ и, если нашли, производить замену его значения.
-#  2. Передать в функцию "структуру сайта" и новое значение, на которое необходимо заменить слово "телефон".
-#  и менять, при помощи replace, если текущих элемент, переданный в функцию - не словарь, а текст.
+
+def find_key(structure, key, k_value):
+
+    for i_key, value in structure.items():
+        if isinstance(value, dict):
+            structure[i_key] = find_key(value, key, k_value)
+    if key in structure:
+        structure[key] = k_value
+    return structure
 
 
-# TODO Для вывода структуры сайта, в функцию стоит добавить параметр «количество пробелов».
-#  При помощи цикла необходимо идти по словарю и проверять, является ли следующее значение словарём.
-#  Если нет, выводим структуру при помощи print с текущим «количеством пробелов».
-
-
-def copy_site(structure, count=0, n_site={}):
+def copy_site(structure, key_title, key_h2, count=0, n_site={}):
     for _ in range(count):
         name = input('Введите название продукта для нового сайта: ')
         if isinstance(structure, dict):
             key = 'Сайт для ' + name
             n_site[key] = copy.deepcopy(structure)
-            n_site[key]['html']['head']['title'] = 'Куплю/продам ' + name + ' недорого'
-            n_site[key]['html']['body']['h2'] = 'У нас самая низкая цена на ' + name
+            find_key(n_site[key], key_title, k_value=f'Куплю/продам {name} недорого')
+            find_key(n_site[key], key_h2, k_value=f'У нас самая низкая цена на {name}')
             print(n_site)
     return n_site
 
@@ -43,4 +38,4 @@ site = {
 
 
 count_site = int(input('Сколько сайтов: '))
-copy_site(site, count_site)
+copy_site(site, 'title', 'h2', count_site)
