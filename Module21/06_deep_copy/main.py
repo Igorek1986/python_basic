@@ -22,14 +22,15 @@ def copy_site(structure, key_title, key_h2, count=0, n_site={}):
             find_key(n_site[key], key_h2, k_value=f'У нас самая низкая цена на {name}')
             print(f'Сайт для {name}:')
 
+            # TODO, функцию structure_print стоит создать до создания функции copy_site.
             def structure_print(s):
 
-                space = 0
+                space = 0  # TODO, переменную стоит сделать значением по умолчанию, иначе, каждый вызов функции она обнуляется.
                 for i_key, i_value in s.items():
                     if isinstance(i_value, dict):
                         print(' ' * space, f'{i_key}:')
                         space += 4
-                        structure_print(i_value)
+                        structure_print(i_value)  # TODO, новое значение space стоит передавать в функцию как параметр.
                     else:
                         print(' ' * space, f'{i_key}: {i_value}')
             structure_print(n_site)
