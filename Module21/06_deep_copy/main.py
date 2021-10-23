@@ -11,7 +11,6 @@ def find_key(structure, key, k_value):
 
 
 def structure_print(s, space=0):
-
     for i_key, i_value in s.items():
         if isinstance(i_value, dict):
             print(' ' * space, f'{i_key}: {{')
@@ -48,6 +47,7 @@ site = {
     }
 }
 
-
 count_site = int(input('Сколько сайтов: '))
 copy_site(site, 'title', 'h2', count_site)
+
+# зачёт!
