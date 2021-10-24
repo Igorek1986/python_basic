@@ -10,7 +10,7 @@ def find_key(structure, key, k_value):
     return structure
 
 
-def structure_print(s, space=0):
+def structure_print(s, space=4):
     for i_key, i_value in s.items():
         if isinstance(i_value, dict):
             print(' ' * space, f"'{i_key}': {{")
@@ -27,16 +27,21 @@ def copy_site(structure, key_title, key_h2, lst, count=0, n_site={}):
             key = 'Сайт для ' + name
             # key = 'site ='
             # key = ''
-            # n_site = copy.deepcopy(structure)
-            # find_key(n_site, key_title, k_value=f'Куплю/продам {name} недорого')
-            # lst.append(find_key(n_site, key_h2, k_value=f'У нас самая низкая цена на {name}'))
-            n_site[key] = copy.deepcopy(structure)
-            find_key(n_site[key], key_title, k_value=f'Куплю/продам {name} недорого')
-            lst.append(find_key(n_site[key], key_h2, k_value=f'У нас самая низкая цена на {name}'))
-            # print(f'Сайт для {name}:')
-            print('site = {')
+            n_site = copy.deepcopy(structure)
+            find_key(n_site, key_title, k_value=f'Куплю/продам {name} недорого')
+            find_key(n_site, key_h2, k_value=f'У нас самая низкая цена на {name}')
+            # n_site[key] = copy.deepcopy(structure)
+            # find_key(n_site[key], key_title, k_value=f'Куплю/продам {name} недорого')
+            # lst.append(find_key(n_site[key], key_h2, k_value=f'У нас самая низкая цена на {name}'))
+            print(f'Сайт для {name}:')
+            # print('site = {')
+            lst.append(n_site)
+            # structure_print(n_site)
+            for i in range(len(lst)):
+                print('site = {')
+                structure_print(lst[i])
+            # lst.append(n_site)
             # print(lst)
-            structure_print(n_site)
 
 
 site = {
