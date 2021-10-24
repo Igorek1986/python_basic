@@ -15,7 +15,7 @@ def structure_print(s, space=4):
         if isinstance(i_value, dict):
             print(' ' * space, f"'{i_key}': {{")
             structure_print(i_value, space + 4)
-            print(' ' * space, "}")
+            print(' ' * space, "},")
         else:
             print(' ' * space, f"'{i_key}': '{i_value}',")
 
