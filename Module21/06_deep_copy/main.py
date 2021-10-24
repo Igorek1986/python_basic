@@ -56,3 +56,4 @@ count_site = int(input('Сколько сайтов: '))
 copy_site(site, 'title', 'h2', site_lst, count_site)
 
 # зачёт!
+# зачёт!
