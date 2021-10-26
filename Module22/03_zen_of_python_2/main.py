@@ -36,8 +36,12 @@ def count_alphabet(cur_path, count=0, lines=0, words=0):
     file.close()
     return count, lines, words
 
+# TODO, предлагаю упростить решение и попробовать решить задание за пару вложенных циклов.
+#  В таком случае, мы сможем сократить количество циклов в коде, что снизит нагрузку на код и количество функций. =)
 
 def hist_dict(cur_path, letter_dict={}):
+    # TODO, переменная alphabet возможно, получилась лишней.
+    #  Предлагаю использовать в решении строковой метод isalpha. =)
     alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' \
                'abcdefghijklmnopqrstuvwxyz'
     file = open(cur_path, 'r')

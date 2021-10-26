@@ -7,6 +7,8 @@ def check_file(path, file, data):
         while True:
             command = input('Вы действительно хотите перезаписать файл? ').lower()
             if command == 'да':
+                # TODO, предлагаю написать дополнительную функцию для записи данных в файл
+                #  Таким образом, получится сократить количество повторяющегося кода.
                 files = open(os.path.join(path, file), 'w')
                 files.write(data)
                 files.close()
@@ -29,7 +31,6 @@ def check_file(path, file, data):
 
 text = input('Введите строку: ')
 
-
 while True:
     save = input('Куда хотите сохранить документ? Введите последовательность папок (через пробел): ').split()
     cur_path = os.path.abspath(os.path.join(os.path.sep, *save))
@@ -38,7 +39,6 @@ while True:
     else:
         print('Такой директории не существует! '
               'Текущий каталог', os.getcwd())
-
 
 name_file = input('Введите имя файла: ')
 name_file = (name_file + '.txt')
@@ -50,7 +50,6 @@ if os.path.isfile(os.path.join(cur_path, name_file)):
     for i_line in dock:
         print(i_line, end='')
     dock.close()
-
 
 # Users igor Documents Python_Basic Module22
 # my_document

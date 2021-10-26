@@ -4,3 +4,4 @@ text.reverse()
 print(' '.join(text), end='\n')
 zen.close()
 
+# зачёт!
