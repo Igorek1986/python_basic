@@ -37,6 +37,31 @@ def count_alphabet(cur_path, count=0, lines=0, words=0):
     return count, lines, words
 
 
+def hist_dict(cur_path, letter_dict={}):
+    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' \
+               'abcdefghijklmnopqrstuvwxyz'
+    file = open(cur_path, 'r')
+    for i_line in file:
+        for alpha in i_line.lower():
+            if alpha in alphabet and alpha in letter_dict:
+                letter_dict[alpha] += 1
+            elif alpha in alphabet:
+                letter_dict[alpha] = 1
+    file.close()
+    min_letter_count = min(letter_dict.values())
+    return letter_dict, min_letter_count
+
+
+def inverted(dct):
+    inverted_dict = dict()
+    for i_key in dct:
+        if dct[i_key] in inverted_dict:
+            inverted_dict[dct[i_key]].append(i_key)
+        else:
+            inverted_dict[dct[i_key]] = [i_key]
+    return inverted_dict
+
+
 path_search = os.path.abspath(os.path.join('..'))
 file_name = 'zen.txt'
 
@@ -46,3 +71,8 @@ count_alp = count_alphabet(result_path)
 print('Количество букв:', count_alp[0])
 print('Количество линий:', count_alp[1])
 print('Количество слов:', count_alp[2])
+alphabet_dict = hist_dict(result_path)
+result_dict = inverted(alphabet_dict[0])
+
+min_alpha = ' '.join(result_dict[alphabet_dict[1]])
+print('Буква которая встречается в тексте наименьшее количество раз:', str(min_alpha))
