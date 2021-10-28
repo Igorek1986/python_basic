@@ -40,6 +40,8 @@ def count_alphabet(cur_path, count=0, lines=0, words=0):
 def hist_dict(cur_path, letter_dict={}, inverted_dict={}):
     file = open(cur_path, 'r')
     for i_line in file:
+        # TODO, стоит сразу реализовать цикл по i_line.
+        #  Возможно, цикл по словарю лишний.
         for i_key in letter_dict:
             if letter_dict[i_key] in inverted_dict:
                 inverted_dict[letter_dict[i_key]].append(i_key)

@@ -15,6 +15,7 @@ def os_walk(cur_path, size_dirs, sub_dirs_count, files_count):
     return size_dirs, sub_dirs_count, files_count
 
 
+# TODO, предлагаю установить значения по умолчанию у параметров счётчиков нашей функции.
 def dir_files(cur_path, size_dirs, sub_dirs_count, files_count):
     if os.path.exists(cur_path):
         for i_elem in os.listdir(cur_path):
@@ -22,14 +23,19 @@ def dir_files(cur_path, size_dirs, sub_dirs_count, files_count):
             sub_dirs_count += 1
             if os.path.isfile(path) and i_elem != '.DS_Store':
                 files_count += 1
+                # TODO, вместо os.path.join(cur_path, i_elem) лучше использовать path =)
                 size_dirs += os.path.getsize(os.path.join(cur_path, i_elem)) / 1024
             if os.path.isdir(path):
+                # TODO, результат возврата этого запуска функции стоит ловить в переменные
+                #  size_dirs, sub_dirs_count, files_count
+                #  Иначе, часть данных будет потеряна.
                 dir_files(path, size_dirs, sub_dirs_count, files_count)
 
 
 
 
-
+        # TODO, предлагаю возвращать из функции значения переменных в любом случае.
+        #  В текущей реализации, если директория указана не правильно, возвращается None
         return size_dirs, sub_dirs_count, files_count
         # print('Кол-во папок', sub_dirs_count)
         # print('Кол-во файлов', files_count)
@@ -37,7 +43,7 @@ def dir_files(cur_path, size_dirs, sub_dirs_count, files_count):
         print('Не верно указана директория')
 
 
-# TODO, os.walk - интересное решение. Молодец! Предлагаю попробовать написать свою функцию с использованием рекурсии,
+# , os.walk - интересное решение. Молодец! Предлагаю попробовать написать свою функцию с использованием рекурсии,
 #  Вместо использования os.walk. =)
 
 
