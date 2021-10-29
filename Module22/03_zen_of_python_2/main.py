@@ -19,7 +19,7 @@ def find_file(cur_path, search_obj):
         print('Файла в данной директории нет')
 
 
-def count_alphabet(cur_path, count=0, lines=0, words=0):
+def count_alphabet(cur_path, count=0, lines=0, words=0, letter_dict={}):
     with open(cur_path, 'r') as file:
         for i_line in file.readlines():
             lines += 1
@@ -27,42 +27,27 @@ def count_alphabet(cur_path, count=0, lines=0, words=0):
             for letter in i_line:
                 if letter.isalpha():
                     count += 1
-    return count, lines, words
-
-
-def min_alpha_text(cur_path, letter_dict={}):
-    with open(cur_path, 'r') as file:
-        for i_line in file:
             for alpha in i_line.lower():
                 if alpha.isalpha() and alpha in letter_dict:
                     letter_dict[alpha] += 1
                 elif alpha.isalpha():
                     letter_dict[alpha] = 1
-    min_letter_count = min(letter_dict.values())
-    min_alpha = [i_keys for i_keys, i_value in letter_dict.items() if i_value == min_letter_count]
-    return min_alpha
+    min_alpha = (min(letter_dict.keys(), key=(lambda key: letter_dict[key])))
+    return count, lines, words, min_alpha
 
 
 path_search = os.path.abspath(os.path.join('..'))
 file_name = 'zen.txt'
 
-# TODO, предлагаю уйти от использования функции min_alpha_text.
-#  Словарь с подсчётом данных стоит реализовать внутри функции count_alphabet.
-#  Таким образом, мы сможем сократить количество циклов в нашем коде.
-#  После чего, словарь с данными, стоит передать в функцию min.
-#  Если подобрать подходящую lambda функцию, то, найти букву с минимальным количеством повторений, мы сможем в одну строку кода. =)
 
 result_path = find_file(path_search, file_name)
-count_alp = count_alphabet(result_path)
-alpha_min = min_alpha_text(result_path)
+count_letter, count_lines, count_words, min_alpha_text = count_alphabet(result_path)
 
-# TODO, создать несколько переменных из одного возврата функции, можно следующим образом
-#  a, b = func()
 
-print('Количество букв:', count_alp[0])
-print('Количество линий:', count_alp[1])
-print('Количество слов:', count_alp[2])
-print('Буква которая встречается в тексте наименьшее количество раз:', str(alpha_min[0]))
+print('Количество букв:', count_letter)
+print('Количество линий:', count_lines)
+print('Количество слов:', count_words)
+print('Буква которая встречается в тексте наименьшее количество раз:', min_alpha_text)
 
 # Количество букв: 652
 # Количество линий: 19
