@@ -20,57 +20,30 @@ def find_file(cur_path, search_obj):
 
 
 def count_alphabet(cur_path, count=0, lines=0, words=0):
-    file = open(cur_path, 'r')
-    for i_line in file:
-        count += sum(1 for alpha in i_line if alpha.isalpha())
-        lines += 1
-        flag = True
-        for letter in i_line:
-            if letter != ' ' and flag:
-                words += 1
-                flag = False
-            else:
-                flag = True
-    file.close()
+    with open(cur_path, 'r') as file:
+        for i_line in file.readlines():
+            lines += 1
+            words += len(i_line.split())
+            for letter in i_line:
+                if letter.isalpha():
+                    count += 1
+        file.close()
     return count, lines, words
 
-# TODO, предлагаю упростить решение и попробовать решить задание за пару вложенных циклов.
-#  В таком случае, мы сможем сократить количество циклов в коде, что снизит нагрузку на код и количество функций. =)
 
-def hist_dict(cur_path, letter_dict={}, inverted_dict={}):
+def min_alpha_text(cur_path, letter_dict={}):
     file = open(cur_path, 'r')
+    # with open(cur_path, 'r') as file:
     for i_line in file:
-        # TODO, стоит сразу реализовать цикл по i_line.
-        #  Возможно, цикл по словарю лишний.
-        for i_key in letter_dict:
-            if letter_dict[i_key] in inverted_dict:
-                inverted_dict[letter_dict[i_key]].append(i_key)
-            else:
-                inverted_dict[letter_dict[i_key]] = [i_key]
-            for alpha in i_line.lower():
-                if alpha.isalpha() and alpha in letter_dict:
-                    letter_dict[alpha] += 1
-                elif alpha.isalpha():
-                    letter_dict[alpha] = 1
-    # for i_key in letter_dict:
-    #     if letter_dict[i_key] in inverted_dict:
-    #         inverted_dict[letter_dict[i_key]].append(i_key)
-    #     else:
-    #         inverted_dict[letter_dict[i_key]] = [i_key]
+        for alpha in i_line.lower():
+            if alpha.isalpha() and alpha in letter_dict:
+                letter_dict[alpha] += 1
+            elif alpha.isalpha():
+                letter_dict[alpha] = 1
     file.close()
-    print(inverted_dict)
-    # min_letter_count = min(letter_dict.values())
-    return letter_dict#, min_letter_count
-
-
-# def inverted(dct):
-#     inverted_dict = dict()
-#     for i_key in dct:
-#         if dct[i_key] in inverted_dict:
-#             inverted_dict[dct[i_key]].append(i_key)
-#         else:
-#             inverted_dict[dct[i_key]] = [i_key]
-#     return inverted_dict
+    min_letter_count = min(letter_dict.values())
+    min_alpha = [i_keys for i_keys, i_value in letter_dict.items() if i_value == min_letter_count]
+    return min_alpha
 
 
 path_search = os.path.abspath(os.path.join('..'))
@@ -79,11 +52,14 @@ file_name = 'zen.txt'
 
 result_path = find_file(path_search, file_name)
 count_alp = count_alphabet(result_path)
+alpha_min = min_alpha_text(result_path)
+
 print('Количество букв:', count_alp[0])
 print('Количество линий:', count_alp[1])
 print('Количество слов:', count_alp[2])
-alphabet_dict = hist_dict(result_path)
-# result_dict = inverted(alphabet_dict[0])
+print('Буква которая встречается в тексте наименьшее количество раз:', str(alpha_min[0]))
 
-# min_alpha = ' '.join(result_dict[alphabet_dict[1]])
-# print('Буква которая встречается в тексте наименьшее количество раз:', str(min_alpha))
+
+# Количество букв: 652
+# Количество линий: 19
+# Количество слов: 136
