@@ -46,16 +46,23 @@ def min_alpha_text(cur_path, letter_dict={}):
 path_search = os.path.abspath(os.path.join('..'))
 file_name = 'zen.txt'
 
+# TODO, предлагаю уйти от использования функции min_alpha_text.
+#  Словарь с подсчётом данных стоит реализовать внутри функции count_alphabet.
+#  Таким образом, мы сможем сократить количество циклов в нашем коде.
+#  После чего, словарь с данными, стоит передать в функцию min.
+#  Если подобрать подходящую lambda функцию, то, найти букву с минимальным количеством повторений, мы сможем в одну строку кода. =)
 
 result_path = find_file(path_search, file_name)
 count_alp = count_alphabet(result_path)
 alpha_min = min_alpha_text(result_path)
 
+# TODO, создать несколько переменных из одного возврата функции, можно следующим образом
+#  a, b = func()
+
 print('Количество букв:', count_alp[0])
 print('Количество линий:', count_alp[1])
 print('Количество слов:', count_alp[2])
 print('Буква которая встречается в тексте наименьшее количество раз:', str(alpha_min[0]))
-
 
 # Количество букв: 652
 # Количество линий: 19

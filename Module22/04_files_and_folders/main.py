@@ -34,7 +34,8 @@ def dir_files(cur_path, size_dirs=0, sub_dirs_count=0, files_count=0):
 dir_path = os.path.abspath(os.path.join('..', '..', 'Module14'))
 dir_info = dir_files(dir_path)
 
-
 print('Размер каталога (в Кб):', dir_info[0])
 print('Количество подкаталогов:', dir_info[1])
 print('Количество файлов:', dir_info[2])
+
+# зачёт! Молодец!

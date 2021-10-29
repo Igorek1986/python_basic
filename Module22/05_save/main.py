@@ -49,3 +49,5 @@ if os.path.isfile(os.path.join(cur_path, name_file)):
 
 # Users igor Documents Python_Basic Module22
 # my_document
+
+# зачёт!
