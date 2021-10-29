@@ -2,16 +2,11 @@ import os
 
 
 def check_file(path, file, data):
-    # if os.path.exists(path):
     if os.path.isfile(os.path.join(path, file)):
         while True:
             command = input('Вы действительно хотите перезаписать файл? ').lower()
             if command == 'да':
-                # TODO, предлагаю написать дополнительную функцию для записи данных в файл
-                #  Таким образом, получится сократить количество повторяющегося кода.
-                files = open(os.path.join(path, file), 'w')
-                files.write(data)
-                files.close()
+                save_file(path, file, data)
                 print('Файл успешно перезаписан!')
                 break
             elif command == 'нет':
@@ -20,13 +15,14 @@ def check_file(path, file, data):
             else:
                 print('Проверьте команду. Введите команду "да" или "нет"')
     else:
-        files = open(os.path.join(path, file), 'w')
-        files.write(data)
-        files.close()
+        save_file(path, file, data)
         print('Файл успешно сохранён!')
-    # else:
-    #     print('Такой директории не существует! '
-    #           'Текущий каталог', os.getcwd())
+
+
+def save_file(path, file, data):
+    files = open(os.path.join(path, file), 'w')
+    files.write(data)
+    files.close()
 
 
 text = input('Введите строку: ')
