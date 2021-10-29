@@ -27,20 +27,17 @@ def count_alphabet(cur_path, count=0, lines=0, words=0):
             for letter in i_line:
                 if letter.isalpha():
                     count += 1
-        file.close()
     return count, lines, words
 
 
 def min_alpha_text(cur_path, letter_dict={}):
-    file = open(cur_path, 'r')
-    # with open(cur_path, 'r') as file:
-    for i_line in file:
-        for alpha in i_line.lower():
-            if alpha.isalpha() and alpha in letter_dict:
-                letter_dict[alpha] += 1
-            elif alpha.isalpha():
-                letter_dict[alpha] = 1
-    file.close()
+    with open(cur_path, 'r') as file:
+        for i_line in file:
+            for alpha in i_line.lower():
+                if alpha.isalpha() and alpha in letter_dict:
+                    letter_dict[alpha] += 1
+                elif alpha.isalpha():
+                    letter_dict[alpha] = 1
     min_letter_count = min(letter_dict.values())
     min_alpha = [i_keys for i_keys, i_value in letter_dict.items() if i_value == min_letter_count]
     return min_alpha
