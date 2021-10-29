@@ -32,6 +32,9 @@ def count_alphabet(cur_path, count=0, lines=0, words=0, letter_dict={}):
                     letter_dict[alpha] += 1
                 elif alpha.isalpha():
                     letter_dict[alpha] = 1
+
+    # TODO, предлагаю, передавать в функцию min словарь при помощи items().
+    #  В lambda функции стоит обращаться только к переменной key.
     min_alpha = (min(letter_dict.keys(), key=(lambda key: letter_dict[key])))
     return count, lines, words, min_alpha
 
