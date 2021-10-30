@@ -40,10 +40,8 @@ def count_alphabet(cur_path, count=0, lines=0, words=0, letter_dict={}):
 path_search = os.path.abspath(os.path.join('..'))
 file_name = 'zen.txt'
 
-
 result_path = find_file(path_search, file_name)
 count_letter, count_lines, count_words, min_alpha_text, min_count_alpha = count_alphabet(result_path)
-
 
 print('Количество букв:', count_letter)
 print('Количество линий:', count_lines)
@@ -54,3 +52,5 @@ print('Буква которая встречается в тексте наим
 # Количество букв: 652
 # Количество линий: 19
 # Количество слов: 136
+
+# зачёт!

@@ -19,3 +19,6 @@ winners_tour(data)
 print(data)
 with open('second_tour.txt', 'w') as file_winners:
     file_winners.writelines(data)
+
+# TODO, пожалуйста, обратите внимание на условие задания
+#  "В первой строке нужно вывести в файл second_tour.txt количество участников второго тура. "
