@@ -33,10 +33,8 @@ def count_alphabet(cur_path, count=0, lines=0, words=0, letter_dict={}):
                 elif alpha.isalpha():
                     letter_dict[alpha] = 1
 
-    # TODO, предлагаю, передавать в функцию min словарь при помощи items().
-    #  В lambda функции стоит обращаться только к переменной key.
-    min_alpha = (min(letter_dict.keys(), key=(lambda key: letter_dict[key])))
-    return count, lines, words, min_alpha
+    min_alpha, letter_number = min(letter_dict.items(), key=lambda key: key[1])
+    return count, lines, words, min_alpha, letter_number
 
 
 path_search = os.path.abspath(os.path.join('..'))
@@ -44,13 +42,14 @@ file_name = 'zen.txt'
 
 
 result_path = find_file(path_search, file_name)
-count_letter, count_lines, count_words, min_alpha_text = count_alphabet(result_path)
+count_letter, count_lines, count_words, min_alpha_text, min_count_alpha = count_alphabet(result_path)
 
 
 print('Количество букв:', count_letter)
 print('Количество линий:', count_lines)
 print('Количество слов:', count_words)
-print('Буква которая встречается в тексте наименьшее количество раз:', min_alpha_text)
+print('Буква которая встречается в тексте наименьшее количество раз:', min_alpha_text,
+      f'\nКоличество повторений: буквы {min_alpha_text}:', min_count_alpha)
 
 # Количество букв: 652
 # Количество линий: 19
