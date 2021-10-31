@@ -15,7 +15,6 @@ def count_letter_text(file, cont_letter_dict={}):
 with zipfile.ZipFile('voyna-i-mir.zip', 'r') as file_zip:
     file_zip.extractall()
 
-
 with open('voyna-i-mir.txt', 'r', encoding='utf-8') as text:
     count_letter_analysis = count_letter_text(text)
     for i in range(len(count_letter_analysis)):
@@ -27,3 +26,5 @@ with open('voyna-i-mir.txt', 'r', encoding='utf-8') as text:
     print('Содержимое файла analysis_text.txt:')
     print(*file_answer)
     file_answer.close()
+
+# зачёт!

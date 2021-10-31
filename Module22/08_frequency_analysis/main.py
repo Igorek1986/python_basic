@@ -23,3 +23,5 @@ with open('text.txt', 'r') as text:
     print('Содержимое файла analysis.txt:')
     print(*file_answer)
     file_answer.close()
+
+# зачёт!
