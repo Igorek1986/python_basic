@@ -4,7 +4,7 @@ def winners_tour(string):
         name = str(string[i][1][:1]) + '.'
         surname = str(string[i][0])
         score = str(string[i][-1])
-        string[i] = ''.join(f'{i+1}) {name} {surname} {score} \n')
+        string[i] = ''.join(f'{i + 1}) {name} {surname} {score} \n')
 
 
 data = []
@@ -24,3 +24,5 @@ with open('second_tour.txt', 'w+') as file_winners:
     print(*file_winners)
     # for i_line in file_winners:
     #     print(i_line, end='')
+
+# зачёт!

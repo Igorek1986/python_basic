@@ -8,6 +8,10 @@ def count_letter_text(file, count=0, cont_letter_dict={}):
                 cont_letter_dict[letter] += 1
             elif letter.isalpha():
                 cont_letter_dict[letter] = 1
+
+    # TODO, предлагаю возвращать из данной функции не словарь, а отсортированный список.
+    #  Т.к. при создании словаря, сортировка может сбиться, т.к. словарь, сортирует данные самостоятельно,
+    #  для быстрого поиска значений по их ключам.
     cont_letter_dict = dict(sorted(cont_letter_dict.items(), key=lambda items: (items[1] * -1, items[0])))
     return count, cont_letter_dict
 

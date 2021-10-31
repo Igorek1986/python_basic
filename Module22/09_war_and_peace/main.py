@@ -15,7 +15,8 @@ def count_letter_text(file, cont_letter_dict={}):
 with zipfile.ZipFile('voyna-i-mir.zip', 'r') as file_zip:
     file_zip.extractall()
 
-
+# TODO, т.к. мы работаем с русскими буквами, то для корректного отображения кириллицы,
+#  файлы стоит открывать указывая кодировку utf-8.
 with open('voyna-i-mir.txt', 'r') as text:
     count_letter_analysis = count_letter_text(text)
     for key, value in count_letter_analysis.items():
