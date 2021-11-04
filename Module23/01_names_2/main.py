@@ -4,6 +4,8 @@ with open('people.txt', 'r', encoding='utf-8') as file:
     for i_line in file.readlines():
         line_count += 1
         length = len(i_line)
+        # TODO, предлагаю уйти от использования метода endswith и вычислений с длиной строки.
+        #  Чтобы убрать лишние символы строки, стоит использовать метод strip. =)
         if i_line.endswith('\n'):
             length -= 1
         try:
