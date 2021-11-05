@@ -32,3 +32,5 @@ with open('coordinates.txt', 'r') as file:
         with open('result.txt', 'w') as file_2:
             my_list = sorted([res1, res2, number])
             file_2.write(' '.join(str(my_list)))
+
+# зачёт!

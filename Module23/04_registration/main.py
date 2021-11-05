@@ -1,11 +1,13 @@
 def check_string_file(string):
-    my_list = list(string.split())
+    my_list = list(string.split())  # TODO, пожалуйста, обратите внимание, вызов функции list получился лишним. split вернёт нам нужный список =)
     if len(my_list) < 3:
         raise IndexError('IndexError')
     if not my_list[0].isalpha():
         raise NameError('NameError')
     if not '@' in my_list[1] and not '.' in my_list[1]:
         raise SyntaxError('SyntaxError')
+    # TODO, пожалуйста, не забудьте проверить, что my_list[2] это число, при помощи метода строк isdigit.
+    #  иначе, в этой части кода, получим непредвиденную ошибку.
     if not 10 < int(my_list[2]) < 99:
         raise ValueError('ValueError')
 
