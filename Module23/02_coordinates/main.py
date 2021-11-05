@@ -33,3 +33,5 @@ with open('coordinates.txt', 'r') as file:
             my_list = sorted([res1, res2, number])
             file_2.write(' '.join(str(my_list)))
 
+# TODO, если получаем ошибку ZeroDivisionError, то код перестаёт работать.
+#  Как ловить и ZeroDivisionError и ValueError в одном блоке except? =)

@@ -1,6 +1,5 @@
 import random
 
-
 sum_num = 0
 while True:
     num = int(input('Введите число: '))
@@ -17,3 +16,5 @@ while True:
     except ValueError:
         print('Сектор приз! Вас выбросило!')
         raise
+
+# зачёт!
