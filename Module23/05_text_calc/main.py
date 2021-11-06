@@ -1,36 +1,32 @@
-def check_calc_file(string):
+def calc_file(num_1, num_2, action):
     result = 0
+    if action == '+':
+        result = num_1 + num_2
+    elif action == '/':
+        result = num_1 / num_2
+    elif action == '*':
+        result = num_1 * num_2
+    elif action == '-':
+        result = num_1 - num_2
+    elif action == '//':
+        result = num_1 // num_2
+    elif action == '%':
+        result = num_1 % num_2
+    return result
+
+
+def check_calc_file(string):
     my_list = string.split()
     if not my_list[0].isdigit() or not my_list[2].isdigit():
         raise ValueError('ValueError')
     operand_1 = int(my_list[0])
     operand_2 = int(my_list[2])
     operation = my_list[1]
-    if not operation in ('+', '-', '/', '*', '//', '%'):
+    if operation not in ('+', '-', '/', '*', '//', '%'):
         raise ArithmeticError('ArithmeticError')
     if operand_1 == 0 and operation == '/':
         raise ZeroDivisionError('ZeroDivisionError')
-    if operation == '+':
-        result = operand_1 + operand_2
-    elif operation == '/':
-        result = operand_1 / operand_2
-    elif operation == '*':
-        result = operand_1 * operand_2
-    elif operation == '-':
-        result = operand_1 - operand_2
-    elif operation == '//':
-        result = operand_1 // operand_2
-    elif operation == '%':
-        result = operand_1 % operand_2
-    return result
-
-
-# TODO, Каждая функция в нашем коде, должна отвечать за одно действие.
-#  Предлагаю оптимизировать код в текущей программе, нам потребуется 2 функции.
-#  1. для проверки корректности данных и вызова исключения, если данные не корректные.
-#  2. для произведения действий, если данные корректные.
-#  Ловить ошибки необходимо только в основном цикле программы.
-
+    return calc_file(operand_1, operand_2, operation)
 
 
 summ_num_file = 0
