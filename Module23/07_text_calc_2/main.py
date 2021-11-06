@@ -16,6 +16,10 @@ def calc_file(num_1, num_2, action):
 
 
 def check_calc_file(string, count):
+    # TODO, пожалуйста, обратите внимание, т.к. каждая функция в нашем коде должна отвечать только за одно действие,
+    #  эта функция должна только проверять строку и вызывать исключения.
+    #  Все остальные действия стоит производить вне этой функции.
+
     my_list = string.split()
     if not my_list[0].isdigit() or not my_list[2].isdigit():
         raise ValueError('ValueError')

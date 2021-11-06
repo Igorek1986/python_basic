@@ -12,13 +12,14 @@ def check_string_file(string):
         raise ValueError('ValueError')
 
 
-with open('registrations.txt', 'r', encoding='utf-8') as file,\
+with open('registrations.txt', 'r', encoding='utf-8') as file, \
         open('registrations_bad.log', 'a', encoding='utf-8') as bad, \
         open('registrations_good.log', 'a', encoding='utf-8') as good:
-
     for line in file.readlines():
         try:
             check_string_file(line)
             good.write(line)
         except (IndexError, NameError, SyntaxError, ValueError) as err:
             bad.write(f'{line.rstrip()} - {err}\n')
+
+# зачёт!

@@ -13,6 +13,9 @@ while True:
                 print(*chat)
         elif action == '2':
             with open('chat.txt', 'a', encoding='utf-8') as chat:
+                # TODO, стоит реализовать цикл по данным из файла, иначе, получим ошибку
+                #     print(*chat)
+                #  io.UnsupportedOperation: not readable
                 print(*chat)
                 message = input('Введите сообщение: ')
                 chat.write(f'{user_name}: {message}\n')

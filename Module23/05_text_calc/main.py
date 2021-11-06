@@ -38,3 +38,5 @@ with open('calc.txt', 'r') as calc:
         except (ValueError, ArithmeticError, ZeroDivisionError, ValueError) as err:
             print(f'{line.rstrip()} - {err}')
 print('Сумма операций строк:', summ_num_file)
+
+# зачёт!
