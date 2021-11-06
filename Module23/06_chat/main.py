@@ -12,11 +12,10 @@ while True:
             with open('chat.txt', 'r', encoding='utf-8') as chat:
                 print(*chat)
         elif action == '2':
-            with open('chat.txt', 'a', encoding='utf-8') as chat:
-                # TODO, стоит реализовать цикл по данным из файла, иначе, получим ошибку
-                #     print(*chat)
-                #  io.UnsupportedOperation: not readable
-                print(*chat)
+            with open('chat.txt', 'a+', encoding='utf-8') as chat:
+                chat.seek(0)
+                for line in chat.readlines():
+                    print(line, end='')
                 message = input('Введите сообщение: ')
                 chat.write(f'{user_name}: {message}\n')
         elif action == '3':
