@@ -37,6 +37,9 @@ with open('calc.txt', 'r') as calc, open('temp.txt', 'w+') as temp:
     for line in calc.readlines():
         try:
             num = check_calc_file(line)
+            # TODO, стоит передать строку в функцию calc_file.
+            #  После чего, прибавить результат выполнения этой функции к переменной summ_num_file.
+
             temp.write(num)
         except (ValueError, ZeroDivisionError, ValueError) as err:
             print(f'{line.rstrip()} - {err}')
@@ -44,8 +47,11 @@ with open('calc.txt', 'r') as calc, open('temp.txt', 'w+') as temp:
             ask = input(f'Обнаружена ошибка в строке: {line} Хотите исправить? ')
             if ask == 'да':
                 change = input('Введите исправленную строку: ')
+                # TODO, стоит, так же, передать строку в ункцию calc_file.
+                #  После чего, тоже, прибавить результат выполнения этой функции к переменной summ_num_file.
                 temp.write(change + '\n')
-            else:
+
+            else: # TODO, предлагаю убрать из решения блок else, т.к. он получился пустой.
                 pass
     temp.seek(0)
     for line in temp.readlines():

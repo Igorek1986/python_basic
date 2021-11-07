@@ -26,3 +26,5 @@ while True:
                   'введите 1, 2 или 3')
     except FileNotFoundError:
         print('Файл не создан! Чат пустой')
+
+# зачёт!
