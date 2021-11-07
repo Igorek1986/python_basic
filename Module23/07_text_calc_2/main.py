@@ -1,4 +1,8 @@
-def calc_file(num_1, num_2, action):
+def calc_file(string):
+    my_list = string.split()
+    num_1 = int(my_list[0])
+    num_2 = int(my_list[2])
+    action = my_list[1]
     result = 0
     if action == '+':
         result = num_1 + num_2
@@ -15,36 +19,38 @@ def calc_file(num_1, num_2, action):
     return result
 
 
-def check_calc_file(string, count):
-    # TODO, пожалуйста, обратите внимание, т.к. каждая функция в нашем коде должна отвечать только за одно действие,
-    #  эта функция должна только проверять строку и вызывать исключения.
-    #  Все остальные действия стоит производить вне этой функции.
-
+def check_calc_file(string):
     my_list = string.split()
     if not my_list[0].isdigit() or not my_list[2].isdigit():
         raise ValueError('ValueError')
     operand_1 = int(my_list[0])
-    operand_2 = int(my_list[2])
     operation = my_list[1]
     if operation not in ('+', '-', '/', '*', '//', '%'):
         raise ArithmeticError('ArithmeticError')
     if operand_1 == 0 and operation == '/':
         raise ZeroDivisionError('ZeroDivisionError')
-    return calc_file(operand_1, operand_2, operation)
+    return string
 
 
 summ_num_file = 0
-with open('calc.txt', 'r+') as calc:
+with open('calc.txt', 'r') as calc, open('temp.txt', 'w+') as temp:
     for line in calc.readlines():
         try:
-            num = check_calc_file(line, count_line)
-            summ_num_file += num
+            num = check_calc_file(line)
+            temp.write(num)
+            print(num)
         except (ValueError, ZeroDivisionError, ValueError) as err:
             print(f'{line.rstrip()} - {err}')
         except ArithmeticError:
             ask = input(f'Обнаружена ошибка в строке: {line} Хотите исправить? ')
             if ask == 'да':
                 change = input('Введите исправленную строку: ')
-                calc.write(change)
+                temp.write(change + '\n')
+            else:
+                pass
+    temp.seek(0)
+    for line in temp.readlines():
+        summ_num_file += calc_file(line)
+
 
 print('Сумма операций строк:', summ_num_file)
