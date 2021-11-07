@@ -38,7 +38,6 @@ with open('calc.txt', 'r') as calc, open('temp.txt', 'w+') as temp:
         try:
             num = check_calc_file(line)
             temp.write(num)
-            print(num)
         except (ValueError, ZeroDivisionError, ValueError) as err:
             print(f'{line.rstrip()} - {err}')
         except ArithmeticError:
