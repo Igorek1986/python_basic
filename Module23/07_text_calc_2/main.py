@@ -33,29 +33,18 @@ def check_calc_file(string):
 
 
 summ_num_file = 0
-with open('calc.txt', 'r') as calc, open('temp.txt', 'w+') as temp:
+with open('calc.txt', 'r') as calc:
     for line in calc.readlines():
         try:
             num = check_calc_file(line)
-            # TODO, стоит передать строку в функцию calc_file.
-            #  После чего, прибавить результат выполнения этой функции к переменной summ_num_file.
-
-            temp.write(num)
+            summ_num_file += calc_file(line)
         except (ValueError, ZeroDivisionError, ValueError) as err:
             print(f'{line.rstrip()} - {err}')
         except ArithmeticError:
             ask = input(f'Обнаружена ошибка в строке: {line} Хотите исправить? ')
             if ask == 'да':
                 change = input('Введите исправленную строку: ')
-                # TODO, стоит, так же, передать строку в ункцию calc_file.
-                #  После чего, тоже, прибавить результат выполнения этой функции к переменной summ_num_file.
-                temp.write(change + '\n')
-
-            else: # TODO, предлагаю убрать из решения блок else, т.к. он получился пустой.
-                pass
-    temp.seek(0)
-    for line in temp.readlines():
-        summ_num_file += calc_file(line)
+                summ_num_file += calc_file(change)
 
 
 print('Сумма операций строк:', summ_num_file)
