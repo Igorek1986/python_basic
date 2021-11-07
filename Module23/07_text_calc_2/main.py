@@ -46,5 +46,6 @@ with open('calc.txt', 'r') as calc:
                 change = input('Введите исправленную строку: ')
                 summ_num_file += calc_file(change)
 
-
 print('Сумма операций строк:', summ_num_file)
+
+# зачёт!
