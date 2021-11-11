@@ -1,6 +1,16 @@
 from faker import Faker
+from university import Student
+import random
 
 fake = Faker('ru_RU')
+new_lst = []
 
-for i in range(10):
-    print(fake.name())
+for _ in range(10):
+    i = Student(fake.name(), 5, [random.randint(3, 5) for _ in range(5)])
+    new_lst.append([i.sn, i.mid_rating])
+
+new_lst.sort(key=lambda key: key[1])
+
+
+for info in new_lst:
+    print(f'ФИО: {info[0]} - средний бал: {info[1]}')
