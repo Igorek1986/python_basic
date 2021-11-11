@@ -20,6 +20,11 @@ class Round:
         self.radius *= k
 
     def crossing(self, x2, y2, r2):
+        # TODO,
+        #  1. стоит передавать в этот метод класса второй круг, вместо параметров второго круга.
+        #  2. а так же добавить проверку (при помощи функции isinstance), что элемент является объектом класса Круг.
+        #  Ведь в противном случае, он может не иметь аргументов "x" и "y".
+
         length_between_centers = math.sqrt((self.coordinate_x - x2) ** 2 + (self.coordinate_y - y2) ** 2)
         sum_radius = self.radius + r2
         if length_between_centers <= sum_radius:
