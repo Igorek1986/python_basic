@@ -1,7 +1,6 @@
 import random
 from unit import Unit
 
-
 warrior_1 = Unit('Воин-1', 100)
 warrior_2 = Unit('Воин-2', 100)
 
@@ -20,3 +19,5 @@ if warrior_1.health > warrior_2.health:
     print(f'\nWinner {warrior_1.name}, Health: {warrior_1.health}')
 else:
     print(f'\nWinner {warrior_2.name}, Health: {warrior_2.health}')
+
+# зачёт!
