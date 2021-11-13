@@ -19,20 +19,19 @@ class Round:
     def increase(self, k):
         self.radius *= k
 
-    def crossing(self, x2, y2, r2):
-        # TODO,
-        #  1. стоит передавать в этот метод класса второй круг, вместо параметров второго круга.
-        #  2. а так же добавить проверку (при помощи функции isinstance), что элемент является объектом класса Круг.
-        #  Ведь в противном случае, он может не иметь аргументов "x" и "y".
-
-        length_between_centers = math.sqrt((self.coordinate_x - x2) ** 2 + (self.coordinate_y - y2) ** 2)
-        sum_radius = self.radius + r2
-        if length_between_centers <= sum_radius:
-            print('Окружности пересекаются')
-            return True
+    def crossing(self, cross_round):
+        if isinstance(cross_round, Round):
+            length_between_centers = math.sqrt((self.coordinate_x - cross_round.coordinate_x) ** 2
+                                               + (self.coordinate_y - cross_round.coordinate_y) ** 2)
+            sum_radius = self.radius + cross_round.radius
+            if length_between_centers <= sum_radius:
+                print('Окружности пересекаются')
+                return True
+            else:
+                print('Окружности не пересекаются')
+                return False
         else:
-            print('Окружности не пересекаются')
-            return False
+            print('Ошибка! Данные не являются кругом. Проверка не возможна.')
 
 
 round_1 = Round(1, 1, 1)
@@ -47,4 +46,4 @@ print('Параметры увеличенного круга:')
 print(f'Площадь: {round_1.square_round()}')
 print(f'Периметр: {round_1.perimeter()}')
 
-round_1.crossing(round_2.coordinate_x, round_2.coordinate_y, round_2.radius)
+round_1.crossing(round_2)
