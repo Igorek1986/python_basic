@@ -7,12 +7,9 @@ student_data = []
 
 for _ in range(10):
     info_student = Student(fake.name(), 5, [random.randint(3, 5) for _ in range(5)])
-    # TODO, пожалуйста, обратите внимание, в список ниже необходимо добавлять студентов, "info_student", а не список их аргументов.
-    #  Как в таком случае, изменится функция lambda? =)
-    student_data.append([info_student.sn, info_student.group_num, info_student.rating_lst, info_student.mid_rating])
+    student_data.append(info_student)
 
-student_data.sort(key=lambda key: key[3])
-
+student_data.sort(key=lambda key: key.mid_rating)
 
 for info in student_data:
-    print(f'ФИО: {info[0]} - средний бал: {info[3]}')
+    print(f'ФИО: {info.sn} - средний бал: {info.mid_rating}')
