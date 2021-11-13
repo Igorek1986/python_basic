@@ -13,3 +13,5 @@ student_data.sort(key=lambda key: key.mid_rating)
 
 for info in student_data:
     print(f'ФИО: {info.sn} - средний бал: {info.mid_rating}')
+
+# зачёт!
