@@ -32,11 +32,11 @@ class Round:
                 return False
         else:
             print('Ошибка! Данные не являются кругом. Проверка не возможна.')
+        # Возможно, было бы правильней, возвращать False. Иначе, возвращается None. Т.к. не возвращается ничего.
 
 
 round_1 = Round(1, 1, 1)
 round_2 = Round()
-
 
 print(f'Площадь: {round_1.square_round()}')
 print(f'Периметр: {round_1.perimeter()}')
@@ -47,3 +47,5 @@ print(f'Площадь: {round_1.square_round()}')
 print(f'Периметр: {round_1.perimeter()}')
 
 round_1.crossing(round_2)
+
+# зачёт!

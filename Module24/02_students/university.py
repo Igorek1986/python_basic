@@ -1,5 +1,6 @@
 class Student:
 
+    # TODO, если параметр mid_rating не используется, предлагаю убрать его из строки кода ниже.
     def __init__(self, sn, group_num, rating_lst=[], mid_rating=1):
         self.sn = sn
         self.group_num = group_num
