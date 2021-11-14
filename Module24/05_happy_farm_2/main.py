@@ -69,3 +69,5 @@ gardener = Gardener('Ivan')
 gardener.care(5)
 gardener.check_potato()
 gardener.collect()
+
+# зачёт!
