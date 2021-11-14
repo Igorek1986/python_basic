@@ -38,9 +38,12 @@ class PotatoGarden:
 
 class Gardener:
 
-    def __init__(self, name, potato_garden):
+    def __init__(self, name, potato_garden): # TODO, potato_garden в этой строке кода получился лишним.
         self.name = name
-        self.potato_garden = potato_garden
+        self.potato_garden = potato_garden  # TODO, т.к. Грядка это класс. Возможно, изначально стоит сделать его равным None.
+        # TODO, для сбора урожая, можно создать ещё один аргумент у садовника - пустой список.
+        #  Если Картошка созрела, то из списка картошек на грядке её стоит удалить, и добавить в список собранной картошки.
+        #  В методе садовника по сбору урожая. =)
 
     def care(self, count):
         print('Сажаю картошку')
@@ -50,10 +53,13 @@ class Gardener:
         print(self.potato_garden)
 
     def check_potato(self):
+        # TODO, стоит реализовать цикл по Грядке садовника с проверкой состояния Картошки на Грядке.
         pass
 
     @staticmethod
     def collect(garden):
+        # TODO, По идее, декоратор staticmethod лишний.
+        #  Т.к. у садовника есть "своя" грядка, с которой он работает.
         print('Собираем урожай')
 
 
