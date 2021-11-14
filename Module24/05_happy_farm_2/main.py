@@ -32,18 +32,16 @@ class PotatoGarden:
     def are_all_ripe(self):
         if not all([i_potato.is_ripe() for i_potato in self.potatoes]):
             print('Картошка еще не созрела!\n')
-        else:
-            print('Вся картошка созрела. Можно собирать!\n')
+        # else:
+        #     print('Вся картошка созрела. Можно собирать!\n')
 
 
 class Gardener:
 
-    def __init__(self, name, potato_garden): # TODO, potato_garden в этой строке кода получился лишним.
+    def __init__(self, name, my_garden=[]):
         self.name = name
-        self.potato_garden = potato_garden  # TODO, т.к. Грядка это класс. Возможно, изначально стоит сделать его равным None.
-        # TODO, для сбора урожая, можно создать ещё один аргумент у садовника - пустой список.
-        #  Если Картошка созрела, то из списка картошек на грядке её стоит удалить, и добавить в список собранной картошки.
-        #  В методе садовника по сбору урожая. =)
+        self.potato_garden = None
+        self.my_garden = my_garden
 
     def care(self, count):
         print('Сажаю картошку')
@@ -53,27 +51,21 @@ class Gardener:
         print(self.potato_garden)
 
     def check_potato(self):
-        # TODO, стоит реализовать цикл по Грядке садовника с проверкой состояния Картошки на Грядке.
-        pass
+        for _ in range(3):
+            self.potato_garden.grow_all()
+            self.potato_garden.are_all_ripe()
 
-    @staticmethod
-    def collect(garden):
-        # TODO, По идее, декоратор staticmethod лишний.
-        #  Т.к. у садовника есть "своя" грядка, с которой он работает.
-        print('Собираем урожай')
+    def collect(self):
+        if not self.potato_garden.are_all_ripe():
+            print('\nВся картошка созрела. Можно собирать!')
+            print('Собираем урожай')
+            self.my_garden = self.potato_garden
+            self.potato_garden = None
+        else:
+            print()
 
 
-my_garden = []
-gardener = Gardener('Ivan', my_garden)
+gardener = Gardener('Ivan')
 gardener.care(5)
-gardener.print_potato_garden()
 gardener.check_potato()
-# print(my_garden)
-
-
-# my_garden.are_all_ripe()
-# for _ in range(3):
-#     my_garden.grow_all()
-#     my_garden.are_all_ripe()
-# Gardener.collect(my_garden)
-# print(my_garden)
+gardener.collect()
