@@ -1,8 +1,9 @@
 class Water:
 
     def __str__(self):
-        return 'Вода'
+        return 'Вода'  # TODO, предлагаю вместо текста, возвращать self.name.
 
+    # TODO, пожалуйста, обратите внимание параметр name получился лишний, т.к. классом не используется.
     def __init__(self, name='Вода'):
         self.name = 'Вода'
 
