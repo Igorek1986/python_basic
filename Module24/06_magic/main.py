@@ -131,3 +131,5 @@ class Lava:
 
 
 print(Dust() + Lava())
+
+# зачёт!
