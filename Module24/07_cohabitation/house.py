@@ -3,5 +3,7 @@ class House:
         self.fridge_eat = fridge_eat
         self.money = money
 
+    # TODO, предлагаю, чтобы не путаться, убрать этот метод из решения.
+    #  Методы и аргументы, должны иметь разные названия. =)
     def money(self, count):
         self.money += count
