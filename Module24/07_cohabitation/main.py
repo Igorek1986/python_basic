@@ -10,7 +10,5 @@ player_2.add_house(house)
 for day in range(1, 366):
     print(f'Сегодня {day}-й')
     action = random.randint(1, 6)
-    if action == 1:
-        player_1.work()
-    elif action == 2:
-        player_1.eat()
+    player_1.status_human(action)
+    player_2.status_human(action)

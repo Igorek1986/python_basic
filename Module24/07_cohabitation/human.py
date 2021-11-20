@@ -10,21 +10,18 @@ class Human:
 
     def eat(self):
         if self.my_house.fridge_eat > 20:
-            print('Приятного аппетита!')
             self.energy += 50
             self.my_house.fridge_eat -= 20
         else:
             print('Нет еды, пойду в магазин.')
-            # TODO, вызов этого метода получился лишним.
-            self.shopping()
 
     def work(self):
         self.energy -= 20
         self.my_house.money += 50
 
     def game(self):
-        if self.energy > 50:
-            self.energy -= 30
+        if self.energy > 25:
+            self.energy -= 20
         else:
             print('Нельзя сейчас играть. Береги энергию для работы!')
 
@@ -34,12 +31,25 @@ class Human:
             self.my_house.money -= 15
         else:
             print('Нет денег, нужно работать!')
-            # TODO, вызов этого метода получился лишним.
+
+    def status_human(self, num):
+        if self.energy < 20:
+            print('Приятного аппетита!')
+            self.eat()
+        elif self.my_house.fridge_eat < 10:
+            print('Пошли в магазин!')
+            self.shopping()
+        elif self.my_house.money < 50:
+            print('Пошли работать!')
             self.work()
-
-
-
-# TODO, пожалуйста, реализуйте ещё один метод у человека.
-#  Исходя из текущего состояния человека, в методе необходимо выбрать только одно действие, которое должен сделать человек за день.
-#  Внутри методов с действиями вызовов других методов быть не должно.
-#  Каждый метод должен отвечать только за одно действие. К примеру метод "eat" отвечает только за то, поесть человек или нет. =)
+        elif num == 1:
+            print('Пошли работать!')
+            self.work()
+        elif num == 2:
+            print('Приятного аппетита!')
+            self.eat()
+        elif self.energy < 0:
+            print('Ты проиграл')
+        else:
+            print('Играем!')
+            self.game()
