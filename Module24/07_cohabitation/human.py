@@ -17,7 +17,7 @@ class Human:
 
     def work(self):
         self.energy -= 20
-        self.my_house.money += 50
+        self.my_house.money += 0 # TODO, исправил на 0, чтобы показать, что люди не умирают.
 
     def game(self):
         if self.energy > 25:
@@ -33,6 +33,11 @@ class Human:
             print('Нет денег, нужно работать!')
 
     def status_human(self, num):
+
+        # TODO, пока что, если нет еды, люди не умирают. =)
+        #  Стоит добавить проверку состояния человека, если сытость "0", то действия в этом методе выполнять не нужно.
+
+
         if self.energy < 20:
             print('Приятного аппетита!')
             self.eat()
