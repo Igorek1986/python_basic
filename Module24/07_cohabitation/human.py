@@ -10,6 +10,7 @@ class Human:
 
     def eat(self):
         if self.my_house.fridge_eat > 20:
+            print('Приятного аппетита!')
             self.energy += 50
             self.my_house.fridge_eat -= 20
         else:
