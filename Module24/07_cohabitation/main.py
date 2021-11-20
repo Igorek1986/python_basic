@@ -12,3 +12,6 @@ for day in range(1, 366):
     action = random.randint(1, 6)
     player_1.status_human(action)
     player_2.status_human(action)
+    if player_1.energy == 0:
+        print('умер')
+        break

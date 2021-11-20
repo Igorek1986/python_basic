@@ -17,7 +17,7 @@ class Human:
 
     def work(self):
         self.energy -= 20
-        self.my_house.money += 0 # TODO, исправил на 0, чтобы показать, что люди не умирают.
+        self.my_house.money += 50
 
     def game(self):
         if self.energy > 25:
@@ -26,35 +26,32 @@ class Human:
             print('Нельзя сейчас играть. Береги энергию для работы!')
 
     def shopping(self):
-        if self.my_house.money > 15:
-            self.my_house.fridge_eat += 30
-            self.my_house.money -= 15
+        if self.my_house.money > 5:
+            self.my_house.fridge_eat += 50
+            self.my_house.money -= 5
         else:
             print('Нет денег, нужно работать!')
 
     def status_human(self, num):
 
-        # TODO, пока что, если нет еды, люди не умирают. =)
-        #  Стоит добавить проверку состояния человека, если сытость "0", то действия в этом методе выполнять не нужно.
-
-
-        if self.energy < 20:
-            print('Приятного аппетита!')
-            self.eat()
-        elif self.my_house.fridge_eat < 10:
-            print('Пошли в магазин!')
-            self.shopping()
-        elif self.my_house.money < 50:
-            print('Пошли работать!')
-            self.work()
-        elif num == 1:
-            print('Пошли работать!')
-            self.work()
-        elif num == 2:
-            print('Приятного аппетита!')
-            self.eat()
-        elif self.energy < 0:
-            print('Ты проиграл')
-        else:
-            print('Играем!')
-            self.game()
+        if not self.energy == 0:
+            if self.energy < 20:
+                print('Приятного аппетита!')
+                self.eat()
+            elif self.my_house.fridge_eat < 10:
+                print('Пошли в магазин!')
+                self.shopping()
+            elif self.my_house.money < 50:
+                print('Пошли работать!')
+                self.work()
+            elif num == 1:
+                print('Пошли работать!')
+                self.work()
+            elif num == 2:
+                print('Приятного аппетита!')
+                self.eat()
+            elif self.energy < 0:
+                print('Ты проиграл')
+            else:
+                print('Играем!')
+                self.game()
