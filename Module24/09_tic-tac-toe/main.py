@@ -6,7 +6,6 @@ win = False
 x_0 = Board(list(range(1, 10)))
 player = Player('Иван')
 
-
 while not win:
     x_0.print_info()
     x_0.input_sym(player.sym_x_0(count))
@@ -21,3 +20,5 @@ while not win:
     elif count == 9:
         print('Ничья!')
         break
+
+# зачёт!

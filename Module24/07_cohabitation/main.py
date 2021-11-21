@@ -15,3 +15,5 @@ for day in range(1, 366):
     if player_1.energy == 0:
         print('умер')
         break
+
+# зачёт!
