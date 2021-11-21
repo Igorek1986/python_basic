@@ -34,14 +34,11 @@ class Human:
 
     def status_human(self, num):
 
-        if not self.energy == 0:  # TODO, или просто "if self.energy"
-            # TODO, пожалуйста, обратите внимание, по итогам года люди должны выжить.
-            #  Предлагаю попробовать есть заранее, к примеру, если энергии меньше 50.
-            #  Идти в магазин стоит так же заранее, если еды в меньше 50.
-            if self.energy < 20:
+        if self.energy:
+            if self.energy < 50:
                 print('Приятного аппетита!')
                 self.eat()
-            elif self.my_house.fridge_eat < 10:
+            elif self.my_house.fridge_eat < 50:
                 print('Пошли в магазин!')
                 self.shopping()
             elif self.my_house.money < 50:

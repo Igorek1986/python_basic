@@ -1,14 +1,8 @@
 class Player:
 
-    # TODO, если список карт относится к конкретному игроку, то его стоит создавать внутри метода __init__.
-    lst_card = []
-
-    def __init__(self, name):
+    def __init__(self, name, lst_card=[]):
         self.name = name
+        self.lst_card = lst_card
 
     def add_card_player(self, card):
         self.lst_card.append(card)
-
-    # TODO, если метод получился пустым, то стоит просто убрать его из решения. =)
-    def count_card(self):
-        pass
