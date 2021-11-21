@@ -1,36 +1,24 @@
 from desk import Desk
-from card import Card
 from player import Player
 from dealer import Dealer
 
-# TODO, пожалуйста, обратите внимание, пользователь может запросить сколько угодно карт.
-#  Пока что, запрашивает всего одну.
-#  Каждый раз перед запросом карты, стоит выводить текущее количество очков карт пользователя.
 
-sum_player = 0
-sum_dealer = 0
 player_1 = Player('Костя')
 dealer = Dealer('Дилер')
 for _ in range(2):
     player_1.add_card_player(Desk().random_card())
     dealer.add_card(Desk().random_card())
 
-dealer.question_card(player_1)
-dealer.question_card_dealer()
 
-
-for key in player_1.lst_card:
-    if key == 'туз' and sum_player >= 11:
-        sum_player += 1
+while True:
+    if not dealer.question_card(player_1):
+        dealer.question_card_dealer()
     else:
-        sum_player += Card(key).count_card()
-for key in dealer.lst_card:
-    if key == 'туз' and sum_dealer >= 11:
-        sum_player += 1
-    else:
-        sum_dealer += Card(key).count_card()
+        break
 
 
+sum_player = player_1.count_player()
+sum_dealer = dealer.count_dealer()
 if sum_player >= 22:
     sum_player = 0
 if sum_dealer >= 22:
@@ -39,12 +27,10 @@ if sum_dealer >= 22:
 if sum_dealer < sum_player:
     print(f'Выиграл {player_1.name}!')
     print('Карты победителя:')
-    for _ in player_1.lst_card:
-        print(_)
+    player_1.cards_player()
 elif sum_player < sum_dealer:
     print(f'Выиграл {dealer.name}!')
     print('Карты победителя:')
-    for _ in dealer.lst_card:
-        print(_)
+    dealer.cards_dealer()
 else:
     print('Нет победителей.')
