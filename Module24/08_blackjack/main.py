@@ -2,20 +2,17 @@ from desk import Desk
 from player import Player
 from dealer import Dealer
 
-
 player_1 = Player('Костя')
 dealer = Dealer('Дилер')
 for _ in range(2):
     player_1.add_card_player(Desk().random_card())
     dealer.add_card(Desk().random_card())
 
-
 while True:
     if not dealer.question_card(player_1):
         dealer.question_card_dealer()
     else:
         break
-
 
 sum_player = player_1.count_player()
 sum_dealer = dealer.count_dealer()
@@ -34,3 +31,4 @@ elif sum_player < sum_dealer:
     dealer.cards_dealer()
 else:
     print('Нет победителей.')
+# зачёт!
