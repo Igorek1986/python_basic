@@ -26,5 +26,7 @@ class Bus(Car):
         self.count_of_passengers -= count
 
     def move(self, distance, angel):
+        # TODO, предлагаю заменить строки кода ниже вызовом супер метода,
+        #  т.к. они полностью дублируют метод "move" родительского класса.
         self.x = round(self.x + distance * math.sin(math.radians(angel)))
         self.y = round(self.x + distance * math.cos(math.radians(angel)))

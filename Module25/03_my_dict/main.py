@@ -6,3 +6,5 @@ class MyDict(dict):
 my_dict = MyDict({'a': 1})
 print(my_dict.get('b'))
 print(my_dict.get('a'))
+
+# зачёт!
