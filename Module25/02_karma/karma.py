@@ -4,8 +4,8 @@ from my_exception import KillError, DrunkError, CarCrashError, GluttonyError, De
 
 class Karma:
     day = 0
-    my_exception = [KillError(KillError), DrunkError(DrunkError), CarCrashError(CarCrashError),
-                    GluttonyError(GluttonyError), DepressionError(DepressionError)]
+    my_exception = [KillError('KillError'), DrunkError('DrunkError'), CarCrashError('CarCrashError'),
+                    GluttonyError('GluttonyError'), DepressionError('DepressionError')]
 
     def __init__(self, carma_count):
         self.carma_count = carma_count
