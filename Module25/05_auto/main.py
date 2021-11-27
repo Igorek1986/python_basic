@@ -10,7 +10,7 @@ class Car:
 
     def move(self, angel, distance):
         self.x = round(self.x + distance * math.sin(math.radians(angel)))
-        self.y = round(self.x + distance * math.cos(math.radians(angel)))
+        self.y = round(self.y + distance * math.cos(math.radians(angel)))
 
 
 class Bus(Car):
