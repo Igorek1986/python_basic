@@ -1,9 +1,7 @@
 from karma import Karma
 from my_exception import KillError, DrunkError, CarCrashError, GluttonyError, DepressionError
 
-
 human = Karma(0)
-
 
 while True:
     if not human.carma_count > 500:
@@ -15,3 +13,5 @@ while True:
     else:
         print('Карма достигнута за', human.day, 'дней\nУровень кармы:', human.carma_count)
         break
+
+# зачёт!
