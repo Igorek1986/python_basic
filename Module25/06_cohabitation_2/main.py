@@ -16,6 +16,7 @@ for day in range(1, 366):
     cat.one_day_cat()
     print('\n', player_1)
     print('\n', player_2, '\n')
+    # TODO, возможно, стоит проверять аргумент energy класса жены и кота. =)
     if player_1.energy == 0 or player_2 == 0 or cat == 0:
         print('умер')
         break
