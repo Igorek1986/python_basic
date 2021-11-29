@@ -32,7 +32,8 @@ class Person:
         self.energy -= 10
 
     def one_day(self):
-        pass
+        if self.my_house.dirt > 90:
+            self.energy -= 10
 
 
 class Man(Person):
@@ -40,13 +41,10 @@ class Man(Person):
     def one_day(self):
         action = random.randint(1, 4)
         if self.energy and self.happy:
-            # TODO, т.к. проверка на наличие грязи есть в каждом классе, предлагаю реализовать её в методе
-            #  one_day родительского класса. А в этом методе, просто вызвать супер метод. =)
-            if self.my_house.dirt > 90:
-                self.energy -= 10
+            super().one_day()
             if self.energy < 20:
                 self.eat()
-            elif action == 1:
+            if action == 1:
                 self.eat()
             elif action == 2:
                 self.pet_the_cat()
@@ -78,10 +76,8 @@ class Woman(Person):
     def one_day(self):
         action = random.randint(1, 6)
         if self.energy and self.happy:
-            if self.my_house.dirt > 90:
-                self.energy -= 10
+            super().one_day()
             if self.energy < 20:
-                print(f'{self.name}: Я кушать!')
                 self.eat()
             elif self.my_house.fridge_eat < 60:
                 self.shopping()

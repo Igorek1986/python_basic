@@ -16,8 +16,7 @@ for day in range(1, 366):
     cat.one_day_cat()
     print('\n', player_1)
     print('\n', player_2, '\n')
-    if player_1.energy == 0:
-        # TODO, Игрок 2 и Кот тоже могут умереть. =)
+    if player_1.energy == 0 or player_2 == 0 or cat == 0:
         print('умер')
         break
 
