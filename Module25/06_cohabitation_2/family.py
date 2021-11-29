@@ -32,7 +32,8 @@ class Person:
 
 
 class Man(Person):
-
+    # TODO, если метод не переопределяется, то создавать его не нужно!
+    #  Его мы возьмём из родительского класса. =)
     def __init__(self, name, surname, age):
         super().__init__(name, surname, age)
 
@@ -48,7 +49,8 @@ class Man(Person):
 
 
 class Woman(Person):
-
+    # TODO, если метод не переопределяется, то создавать его не нужно!
+    #  Его мы возьмём из родительского класса. =)
     def __init__(self, name, surname, age):
         super().__init__(name, surname, age)
 

@@ -40,3 +40,5 @@ bus.in_the_bus(count=5)
 print('Пассажиры', bus.count_of_passengers)
 bus.move(angel=30, distance=10)
 print('Деньги', bus.cash)
+
+# зачёт!
