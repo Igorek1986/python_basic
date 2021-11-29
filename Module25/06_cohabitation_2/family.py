@@ -40,6 +40,8 @@ class Man(Person):
     def one_day(self):
         action = random.randint(1, 4)
         if self.energy and self.happy:
+            # TODO, т.к. проверка на наличие грязи есть в каждом классе, предлагаю реализовать её в методе
+            #  one_day родительского класса. А в этом методе, просто вызвать супер метод. =)
             if self.my_house.dirt > 90:
                 self.energy -= 10
             if self.energy < 20:

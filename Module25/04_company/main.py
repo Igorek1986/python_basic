@@ -25,3 +25,5 @@ print(f'Зарплата менеджера {agent_1.name} - {agent_1.salary}\n'
 print(f'Зарплата менеджера {worker_1.name} - {worker_1.salary}\n'
       f'Зарплата менеджера {worker_2.name} - {worker_2.salary}\n'
       f'Зарплата менеджера {worker_3.name} - {worker_3.salary}')
+
+# зачёт!

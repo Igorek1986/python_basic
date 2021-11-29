@@ -17,6 +17,7 @@ for day in range(1, 366):
     print('\n', player_1)
     print('\n', player_2, '\n')
     if player_1.energy == 0:
+        # TODO, Игрок 2 и Кот тоже могут умереть. =)
         print('умер')
         break
 
