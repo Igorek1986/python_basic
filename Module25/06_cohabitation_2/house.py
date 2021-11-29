@@ -8,3 +8,8 @@ class House:
         self.money = money
         self.eat_cat = eat_cat
         self.dirt = dirt
+
+    def __str__(self):
+        return f'\nВсего заработали денег: {self.total_money}\n' \
+               f'Съели еды: {self.total_eat}\n' \
+               f'Купили шуб: {self.total_fur_coat}'
