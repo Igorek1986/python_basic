@@ -42,9 +42,11 @@ class Man(Person):
         action = random.randint(1, 4)
         if self.energy and self.happy:
             super().one_day()
-            if self.energy < 20:
+            if self.energy < 30:
                 self.eat()
-            if action == 1:
+            elif self.my_house.money < 100:
+                self.work()
+            elif action == 1:
                 self.eat()
             elif action == 2:
                 self.pet_the_cat()
@@ -77,10 +79,12 @@ class Woman(Person):
         action = random.randint(1, 6)
         if self.energy and self.happy:
             super().one_day()
-            if self.energy < 20:
-                self.eat()
-            elif self.my_house.fridge_eat < 60:
+            if self.my_house.fridge_eat < 60:
                 self.shopping()
+            elif self.energy < 30:
+                self.eat()
+            elif self.my_house.eat_cat < 10:
+                self.shopping_cat_eat()
             elif action == 1:
                 self.eat()
             elif action == 2:
@@ -97,18 +101,18 @@ class Woman(Person):
             print('Ты проиграл')
 
     def shopping(self):
-        if self.my_house.money > 60:
+        if self.my_house.money >= 80:
             print(f'{self.name}: Иду за покупками!')
-            self.my_house.fridge_eat += 60
+            self.my_house.fridge_eat += 80
             self.energy -= 10
-            self.my_house.money -= 60
+            self.my_house.money -= 80
 
     def shopping_cat_eat(self):
-        if self.my_house.money > 10:
+        if self.my_house.money > 20:
             print(f'{self.name}: Покупаем еду для кота!')
-            self.my_house.eat_cat += 20
+            self.my_house.eat_cat += 40
             self.energy -= 10
-            self.my_house.money -= 10
+            self.my_house.money -= 20
 
     def fur_coat(self):
         if self.my_house.money > 350:
@@ -137,7 +141,9 @@ class Cat:
     def one_day_cat(self):
         action = random.randint(1, 3)
         if self.energy:
-            if action == 1:
+            if self.energy < 20:
+                self.eat_cat()
+            elif action == 1:
                 self.eat_cat()
             elif action == 2:
                 self.sleep()
