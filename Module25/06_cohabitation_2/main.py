@@ -1,7 +1,6 @@
 from family import Cat, Man, Woman
 from house import House
 
-
 player_1 = Man(name='Артем', surname='Иванов', age=25)
 player_2 = Woman('Ольга', surname='Иванова', age=25)
 cat = Cat(name='Барсик')
@@ -27,3 +26,5 @@ for day in range(1, 366):
         break
 
 print(player_1.my_house)
+
+# зачёт!
