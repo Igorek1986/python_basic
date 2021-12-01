@@ -22,6 +22,9 @@ class TaskManager:
         if num not in self.task_manager.keys():
             Stack.add_stack(Stack(), f'{num} {task}')
         else:
+            # TODO, эту строку кода стоит реализовать в блоке if.
+            #  В таком случае, код из блока if и блок else будут лишними.
+            #  После чего, при помощи обращения к методу add_stack необходимо добавить в список значение.
             self.task_manager[num] = Stack()
 
 
