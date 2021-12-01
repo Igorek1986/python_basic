@@ -1,21 +1,12 @@
-class Stack:
-    stack = []
-
-    def add_stack(self, obj):
-        self.stack.append(obj)
-
-    def del_stack(self):
-        self.stack.pop()
-
-    def __str__(self):
-        return f'{self.stack}'
+from stack import Stack
 
 
 class TaskManager:
     task_manager = {}
 
     def __str__(self):
-        return f'{self.task_manager}'
+
+        return ''
 
     def new_task(self, task, num):
 
@@ -30,6 +21,9 @@ manager.new_task("помыть посуду", 4)
 manager.new_task("отдохнуть", 1)
 manager.new_task("поесть", 2)
 manager.new_task("сдать дз", 2)
-# print(Stack())
+
+for i in Stack.stack:
+    print(i)
+print(Stack)
 
 print(manager)
