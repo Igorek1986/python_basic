@@ -24,6 +24,5 @@ manager.new_task("сдать дз", 2)
 
 for i in Stack.stack:
     print(i)
-print(Stack)
 
 print(manager)
