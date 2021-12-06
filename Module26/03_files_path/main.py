@@ -1,7 +1,7 @@
 import os
 
 # TODO, пожалуйста, не забудьте добавить аннотации.
-def gen_files_path(user_dir):
+def gen_files_path(user_dir: str) -> str:
     path = os.path.abspath(os.path.join('/'))
     for dirs, folder, files in os.walk(path):
         # TODO, если папка найдена, стоит выйти из генератора при помощи return.
