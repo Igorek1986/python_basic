@@ -6,6 +6,7 @@ class NumberSeq:
         self.number = number
         self.count = 0
 
+    # TODO, т.к. в этом методе класс возвращает сам себя, то стоит указать возврат "NumberSeq" вместо Iterable[int]
     def __iter__(self) -> Iterable[int]:
         self.count = 0
         return self

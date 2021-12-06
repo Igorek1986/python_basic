@@ -1,9 +1,12 @@
 from num_seq import NumberSeq
 from collections.abc import Iterable
 
-
+# TODO, функция num_seq и модуль num_seq имеют одинаковые названия.
+#  Возможно, стоит назвать их по разному.
 def num_seq(number: int) -> Iterable[int]:
     count = 0
+    # TODO, для реализации функции генератора, вызывать StopIteration не нужно.
+    #  Стоит реализовать цикл for с возвратом данных из функции при помощи yield.
     if count > number:
         raise StopIteration
     yield count
@@ -20,6 +23,7 @@ print()
 
 
 print(f'\nФункция-генератор.\nКвадраты чисел до {num}: ', end='')
+# TODO, в этом месте кода стоит реализовать цикл по функции num_seq.
 num_seq_2 = NumberSeq(number=num)
 for i_num in num_seq_2:
     print(i_num, end=', ')
