@@ -1,17 +1,22 @@
 import os
 
-# TODO, пожалуйста, не забудьте добавить аннотации.
-def gen_files_path(user_dir: str) -> str:
-    path = os.path.abspath(os.path.join('/'))
+
+def gen_files_path(path: str, user_dir: str) -> str:
     for dirs, folder, files in os.walk(path):
-        # TODO, если папка найдена, стоит выйти из генератора при помощи return.
-        if user_dir in dirs:
-            for file in files:
-                yield os.path.join(dirs, file)
+        for file in files:
+            yield os.path.join(dirs, file)
+            if user_dir in dirs:
+                return
 
 
-dirs = gen_files_path('Module26')
-for i_path in dirs:
+path_user = input('Введите путь через пробел: ').split()
+root_path = os.path.abspath(os.path.join(os.path.sep, *path_user))
+
+dirs_name = input('Введите наименование директории: ')
+dirs_search = gen_files_path(path=root_path, user_dir=dirs_name)
+for i_path in dirs_search:
     print(i_path)
 
-# TODO, пожалуйста, добавьте запрос у пользователя начальной директории.
+
+# Users Igor Documents Skillbox
+# 04_hof_seq
