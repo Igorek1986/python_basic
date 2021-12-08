@@ -5,6 +5,8 @@ def gen_files_path(path: str, user_dir: str) -> str:
     for dirs, folder, files in os.walk(path):
         for file in files:
             if user_dir in dirs and file.endswith('.py'):
+                # TODO, предлагаю возвращать из этой функции не только название файла,
+                #  но и количество строк в файле.
                 yield os.path.join(dirs, file)
 
 
@@ -15,6 +17,7 @@ def count_str_code(files: str) -> int:
             if line.split() and not line.startswith('#'):
                 count += 1
     return count
+
 
 
 path_user = input('Введите путь через пробел: ').split()

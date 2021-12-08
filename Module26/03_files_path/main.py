@@ -17,6 +17,7 @@ dirs_search = gen_files_path(path=root_path, user_dir=dirs_name)
 for i_path in dirs_search:
     print(i_path)
 
-
 # Users Igor Documents Skillbox
 # 04_hof_seq
+
+# зачёт!

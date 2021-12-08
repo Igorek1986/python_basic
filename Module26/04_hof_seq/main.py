@@ -19,6 +19,7 @@ class Qsequence:
 def hof_seq(lst: list, n: int) -> Iterable[int]:
     lst = lst[:]
     if not lst[0] == 1 or not lst[1] == 1:
+        # для выхода из функции генератора стоит использовать return.
         raise StopIteration()
     else:
         for num in range(n):
@@ -33,8 +34,9 @@ q_num = Qsequence([1, 1])
 for _ in range(num_search):
     print(next(q_num), end='')
 
-
 print('\nГенератор: ', end='')
 q_num_1 = hof_seq(lst=[1, 1], n=num_search)
 for i_num in q_num_1:
     print(i_num, end='')
+
+# зачёт!

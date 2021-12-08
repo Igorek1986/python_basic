@@ -15,16 +15,16 @@ for i_num in num_seq_1:
     print(i_num, end=', ')
 print()
 
-
 print(f'\nФункция-генератор.\nКвадраты чисел до {num}: ', end='')
 num_seq_2 = square_number(number=num)
 for i_num in num_seq_2:
     print(i_num, end=', ')
 print()
 
-
 print(f'\nГенераторное выражение.\nКвадраты чисел до {num}: ', end='')
 num_seq_3 = (i_number ** 2 for i_number in range(1, num + 1))
 for i_num in num_seq_3:
     print(i_num, end=', ')
 print()
+
+# зачёт!
