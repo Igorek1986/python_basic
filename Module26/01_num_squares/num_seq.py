@@ -1,4 +1,3 @@
-from collections.abc import Iterable
 
 
 class NumberSeq:
@@ -6,8 +5,7 @@ class NumberSeq:
         self.number = number
         self.count = 0
 
-    # TODO, т.к. в этом методе класс возвращает сам себя, то стоит указать возврат "NumberSeq" вместо Iterable[int]
-    def __iter__(self):
+    def __iter__(self) -> "NumberSeq":
         self.count = 0
         return self
 
