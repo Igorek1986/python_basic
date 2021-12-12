@@ -6,11 +6,7 @@ def gen_files_path(path: str, user_dir: str) -> int:
         for file in files:
             if user_dir in dirs and file.endswith('.py'):
                 count = count_str_code(os.path.join(dirs, file))
-                # yield os.path.join(dirs, file)
-                # TODO, возвращать количество строк и название файла стоит в одном блоке yield.
-                #  Пример:
-                #  yield a, b
-                yield count
+                yield count, os.path.join(dirs, file)
 
 
 def count_str_code(files: str) -> int:
@@ -29,9 +25,8 @@ dirs_name = input('Введите наименование директории:
 dirs_search = gen_files_path(path=root_path, user_dir=dirs_name)
 count_code = 0
 
-# TODO, в таком случае, в цикле можно произвести авто распаковку данных
-#  for a, b in example:
-for i_count in dirs_search:
+
+for i_count, i_file in dirs_search:
     count_code += i_count
 
 print('Количество строк кода:', count_code)
