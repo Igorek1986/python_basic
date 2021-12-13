@@ -52,7 +52,7 @@ class LinkedList:
         prev.next = cur_node.next
         self.length -= 1
 
-    def get(self, index):
+    def get(self, index: int) -> Any:
         cur_node = self.head
         cur_index = 0
         if self.length == 0 or self.length < index:
