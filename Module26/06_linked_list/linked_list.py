@@ -10,7 +10,7 @@ from node import Node
 #  - Начальный элемент списка,
 #  - Длина списка.
 #  Этот класс должен организовать взаимодействие классов Node внутри.
-class LinkedList(object):
+class LinkedList:
     def __init__(self):
         self.head = None
 
