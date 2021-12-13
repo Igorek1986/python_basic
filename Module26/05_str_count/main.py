@@ -23,13 +23,13 @@ root_path = os.path.abspath(os.path.join(os.path.sep, *path_user))
 dirs_search = gen_files_path(path=root_path)
 count_code = 0
 
-
 for i_count, i_file in dirs_search:
     count_code += i_count
 
 print('Количество строк кода:', count_code)
 
-
 # Users Igor Documents Skillbox Module25
 # Module25
 # 382
+
+# зачёт!
