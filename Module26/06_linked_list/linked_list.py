@@ -1,78 +1,64 @@
 from node import Node
+from typing import Any, Optional
 
 
-# TODO, наследование от object получилось лишним, т.к. все классы в python по умолчанию являются объектами.
-#  В решении текущего задания стоит написать пару классов
-#  1. Node() - будет выступать в роли одного элемента списка, должен содержать в себе два аргумента:
-#  - Ссылка на следующий элемент.
-#  - Текущее значение.
-#  2. LinkedList() - будет выступать в роли списка. У него должны быть такие аргументы, как:
-#  - Начальный элемент списка,
-#  - Длина списка.
-#  Этот класс должен организовать взаимодействие классов Node внутри.
 class LinkedList:
-    def __init__(self):
-        self.head = None
+    def __init__(self) -> None:
+        self.head: Optional[Node] = None
+        self.length = 0
 
-    def __str__(self):
-        cur_node = self.head
-        output = '['
-        while cur_node:
-            output += str(cur_node.get_num()) + ' '
-            cur_node = cur_node.get_num_next()
-        output = output[:-1]
-        output += ']'
-        return output
+    def __str__(self) -> str:
+        if self.head is not None:
+            current = self.head
+            values = [str(current.value)]
+            while current.next is not None:
+                current = current.next
+                values.append(str(current.value))
+            return f'[{" ".join(values)}]'
+            # return '[{values}]'.format(values=' '.join(values))
+        return 'LinkedList []'
 
-    def __iter__(self):
-        cur_node = self.head
-        while cur_node:
-            yield cur_node.get_num()
-            cur_node = cur_node.get_num_next()
-        return self
-
-    def append(self, num):
-        new_node = Node(num)
-        cur_node = self.head
-        if not cur_node:
+    def append(self, elem: Any) -> None:
+        new_node = Node(elem)
+        if self.head is None:
             self.head = new_node
             return
-        while cur_node.get_num_next():
-            cur_node = cur_node.get_num_next()
-        cur_node.set_num_next(new_node)
+
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node
+        self.length += 1
+
+    def remove(self, index) -> None:
+        cur_node = self.head
+        cur_index = 0
+        if self.length == 0 or self.length <= index:
+            raise IndexError
+
+        if cur_node is not None:
+            if index == 0:
+                self.head = cur_node.next
+                self.length -= 1
+                return
+
+        while cur_node is not None:
+            if cur_index == index:
+                break
+            prev = cur_node
+            cur_node = cur_node.next
+            cur_index += 1
+
+        prev.next = cur_node.next
+        self.length -= 1
 
     def get(self, index):
         cur_node = self.head
-        count = 0
+        cur_index = 0
+        if self.length == 0 or self.length < index:
+            raise IndexError
         while cur_node:
-            if count == index:
-                return cur_node.get_num()
-            count += 1
-            cur_node = cur_node.get_num_next()
-        print('Индекс не входит в границы')
-
-    def remove_back(self):
-        cur_node = self.head
-        while cur_node.get_num_next().get_num_next():
-            cur_node = cur_node.get_num_next()
-        cur_node.set_num_next(None)
-
-    def remove_front(self):
-        cur_node = self.head
-        self.head = cur_node.get_num_next()
-
-    def remove(self, index):
-        cur_node = self.head
-        count = 0
-        while cur_node.get_num_next():
-            if index == 0:
-                self.remove_front()
-                return
-            elif count + 1 == index:
-                the_node_to_remove = cur_node.get_num_next()
-                the_node_after_removed = the_node_to_remove.get_num_next()
-                cur_node.set_num_next(the_node_after_removed)
-                return
-            count += 1
-            cur_node = cur_node.get_next()
-        print('Индекс не входит в границы')
+            if cur_index == index:
+                return cur_node.value
+            cur_index += 1
+            cur_node = cur_node.next

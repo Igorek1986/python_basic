@@ -4,8 +4,8 @@ my_list = LinkedList()
 my_list.append(10)
 my_list.append(20)
 my_list.append(30)
-for i_num in my_list:
-    print(i_num, end=' ')
+# for i_num in my_list:
+#     print(i_num, end=' ')
 
 
 print('\nТекущий список:', my_list)
