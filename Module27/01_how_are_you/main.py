@@ -6,6 +6,7 @@ def how_are_you(func: Callable) -> Callable:
 
     @functools.wraps(func)
     def wrapped_func(*args, **kwargs) -> Any:
+        # TODO, внутри функции необходимо реализовать запрос ввода пользователя "Как дела?" при помощи функции input.
         print("Как дела? Хорошо.\n"
               "А у меня не очень! Ладно, держи свою функцию.")
         result = func(*args, **kwargs)
