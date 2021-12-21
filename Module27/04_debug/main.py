@@ -13,7 +13,8 @@ def debug(func: Callable) -> Callable:
             for i_args in args:
                 info += ''.join(i_args)
 
-        else:
+        else: # TODO, наличие kwargs стоит проверять отдельным блоком if, т.к. могут быть и kwargs и args.
+              #  Или, функция может быть без параметров.
             for i_key, i_value in kwargs.items():
                 # info += str(i_key) + '=' + str(i_value)
                 info += ''.join(i_key) + '=' + str(i_value)
