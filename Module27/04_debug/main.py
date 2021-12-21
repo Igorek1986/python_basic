@@ -7,18 +7,19 @@ def debug(func: Callable) -> Callable:
     def wrapper_func(*args, **kwargs) -> Any:
 
         info = str(func.__name__)
-        info += "('"
+        info += "("
 
         if args:
-            for i_args in args:
-                info += ''.join(i_args)
+            info += ''.join("'" + x + "'" for x in args)
 
-        else: # TODO, наличие kwargs стоит проверять отдельным блоком if, т.к. могут быть и kwargs и args.
-              #  Или, функция может быть без параметров.
-            for i_key, i_value in kwargs.items():
-                # info += str(i_key) + '=' + str(i_value)
-                info += ''.join(i_key) + '=' + str(i_value)
-        info += "')"
+        if kwargs:
+            info += ', '.join(x + '=' + "'" + str(y) + "'" for x, y in kwargs.items())
+
+        else:
+            info += ''.join('')
+
+        info += ")"
+
         print('Вызывается', info)
         result = func(*args, **kwargs)
         print(f"'{func.__name__}' вернула значение {result}")
