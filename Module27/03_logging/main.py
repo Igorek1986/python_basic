@@ -28,3 +28,5 @@ def num_zero(num: int) -> float:
 
 for _ in range(10):
     num_zero(num=random.randint(0, 1))
+
+# зачёт!

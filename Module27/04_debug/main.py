@@ -23,7 +23,9 @@ def debug(func: Callable) -> Callable:
         print('Вызывается', info)
         result = func(*args, **kwargs)
         print(f"'{func.__name__}' вернула значение {result}")
-        return print(result)
+        return print(result)    # TODO, пожалуйста, обратите внимание, вернуть необходимо результат возврата функции.
+        # TODO при возврате print возвращается None. Т.к. print ничего не возвращает.
+
 
     return wrapper_func
 
