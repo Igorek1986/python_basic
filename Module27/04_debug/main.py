@@ -1,10 +1,10 @@
 import functools
-from typing import Callable, Any
+from typing import Callable
 
 
 def debug(func: Callable) -> Callable:
     @functools.wraps(func)
-    def wrapper_func(*args, **kwargs) -> Any:
+    def wrapper_func(*args, **kwargs) -> str:
 
         info = str(func.__name__)
         info += "("
@@ -22,10 +22,8 @@ def debug(func: Callable) -> Callable:
 
         print('Вызывается', info)
         result = func(*args, **kwargs)
-        print(f"'{func.__name__}' вернула значение {result}")
-        return print(result)    # TODO, пожалуйста, обратите внимание, вернуть необходимо результат возврата функции.
-        # TODO при возврате print возвращается None. Т.к. print ничего не возвращает.
-
+        print(f"'{func.__name__}' вернула значение '{result}'")
+        return result
 
     return wrapper_func
 
@@ -39,11 +37,9 @@ def greeting(name, age=None):
         return "Привет, {name}!".format(name=name)
 
 
-greeting("Том")
-print()
-greeting(name="Миша", age=100)
-print()
-greeting(name="Катя", age=16)
+print(greeting("Том"), '\n')
+print(greeting(name="Миша", age=100), '\n')
+print(greeting(name="Катя", age=16), '\n')
 
 
 # Результат:
