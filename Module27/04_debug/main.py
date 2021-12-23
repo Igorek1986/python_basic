@@ -30,7 +30,6 @@ def debug(func: Callable) -> Callable:
 
 @debug
 def greeting(name, age=None):
-
     if age:
         return "Ого, {name}! Тебе уже {age} лет, ты быстро растёшь!".format(name=name, age=age)
     else:
@@ -40,7 +39,6 @@ def greeting(name, age=None):
 print(greeting("Том"), '\n')
 print(greeting(name="Миша", age=100), '\n')
 print(greeting(name="Катя", age=16), '\n')
-
 
 # Результат:
 
@@ -57,3 +55,5 @@ print(greeting(name="Катя", age=16), '\n')
 # Вызывается greeting(name='Катя', age=16)
 # 'greeting' вернула значение 'Ого, Катя! Тебе уже 16 лет, ты быстро растёшь!'
 # Ого, Катя! Тебе уже 16 лет, ты быстро растешь!
+
+# зачёт!

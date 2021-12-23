@@ -2,7 +2,6 @@ from typing import Callable
 
 
 class Counter:
-
     """ Подсчет количества вызова декорируемой функции """
 
     count = 0
@@ -23,3 +22,5 @@ def hallo_word():
 hallo_word()
 hallo_word()
 print('Функция вызывалась:', hallo_word.count, 'раза!')
+
+# зачёт!
