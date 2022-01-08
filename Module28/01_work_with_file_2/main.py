@@ -18,9 +18,10 @@ class File:
         return self.file_obj
 
     def __exit__(self, exc_type, exc_val, exc_tb) -> None:
-        self.file_obj.close()
-
-        # TODO, пожалуйста, не забывайте отрабатывать исключения, которые возникают при закрытии файла.
+        try:
+            self.file_obj.close()
+        except OSError:
+            print('Невозможно закрыть файл')
 
 
 with File('example.txt', 'r') as file:
