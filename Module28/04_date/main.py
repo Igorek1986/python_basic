@@ -1,24 +1,21 @@
-from abc import ABC, abstractmethod
+class Date:
+    """ Базовый клас проверки даты """
 
-
-class Date(ABC):
-    """ Абстрактный базовый клас проверки даты """
-    # TODO, предлагаю добавить метод init в наш класс
-    #  с параметрами из которых состоит дата => "День", "Месяц", "Год"
     day = 0
     mount = 0
     year = 0
 
-    @classmethod
-    @abstractmethod  # TODO Возможно этот метод получился лишним.
-    def from_string(cls, date_str: str) -> str:
-        cls.day, cls.mount, cls.year = map(int, date_str.split('-'))
-        # TODO, Т.к. наш класс является Датой, из строки необходимо вернуть объект класса Дата.
-        #  Т.к. аргумент cls ссылается на Дату, можно возвращать его.
-        return f'День: {cls.day}\tМесяц: {cls.mount}\tГод: {cls.year}'
+    def __init__(self, date_str: str) -> None:
+        self.day, self.mount, self.year = date_str.split('-')
+
+    def __str__(self):
+        return f'День: {self.day}\tМесяц: {self.mount}\tГод: {self.year}'
 
     @classmethod
-    @abstractmethod
+    def from_string(cls, date_str: str) -> 'Date':
+        return cls(date_str)
+
+    @classmethod
     def is_date_valid(cls, date_str: str) -> bool:
         cls.day, cls.mount, cls.year = map(int, date_str.split('-'))
         if (0 < cls.day <= 31) and (0 < cls.mount <= 12) and (0 < cls.year):
