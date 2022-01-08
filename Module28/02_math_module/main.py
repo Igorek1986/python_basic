@@ -24,7 +24,7 @@ class MyMath(ABC):
         return len_edge_cube ** 3
 
     @classmethod
-    @abstractmethod
+    @abstractmethod  # Возможно этот метод получился лишним.
     def sfera_sq(cls, radius: int) -> float:
         return cls.math.pi * 4 * radius ** 2
 
@@ -32,11 +32,11 @@ class MyMath(ABC):
 res_1 = MyMath.circle_len(radius=5)
 res_2 = MyMath.circle_sq(radius=6)
 
-
 print(res_1)
 print(res_2)
-
 
 # Результат:
 # 31.41592653589793
 # 113.09733552923255
+
+# зачёт!
