@@ -1,79 +1,93 @@
-from abc import ABC, abstractmethod
-
-
-# class Figure(ABC):
-#
-#     """ Абстрактный базовый класс фигуры"""
-#
-#     @abstractmethod
-#     def __init__(self, side_1: int, side_2: int):
-#         self._side_1 = side_1
-#         self._side_2 = side_2
-#
-#     @property
-#     def side_1(self):
-#         return self._side_1
-#
-#     @side_1.setter
-#     def side_1(self, side_1):
-#         self._side_1 = side_1
-#
-#     @property
-#     def side_2(self):
-#         return self._side_2
-#
-#     @side_2.setter
-#     def side_2(self, side_2):
-#         self._side_2 = side_2
-
-
 class Square:
 
     """" Базовый класс квадрата """
 
-    def __init__(self, side: int):
-        self.side = side
+    def __init__(self, length: int) -> None:
+        self.length = length
 
     def perimetr(self) -> int:
-        return self.side * 4
+        return self.length * 4
 
-    def square(self) -> int:
-        return self.side ** 2
+    def area(self) -> int:
+        return self.length ** 2
+
+    @property
+    def new_length(self) -> float:
+        return self.length
+
+    @new_length.setter
+    def new_length(self, length: int):
+        self.length = length
 
 
 class Triangle:
 
     """ Базовый класс треугольника """
 
-    def __init__(self, base: int, height: int):
+    def __init__(self, base: int, height: int) -> None:
         self.base = base
         self.height = height
 
     def perimetr(self) -> int:
         return 2 * self.height + self.base
 
-    def square(self) -> float:
+    def area(self) -> float:
         return 1 / 2 * self.height * self.base
+
+    @property
+    def new_base(self) -> float:
+        return self.height
+
+    @new_base.setter
+    def new_base(self, base: int):
+        self.base = base
+
+    @property
+    def new_height(self) -> float:
+        return self.height
+
+    @new_height.setter
+    def new_height(self, height: int):
+        self.height = height
 
 
 class SurfaceAreaMixin:
-    pass
+
+    def surface_area(self) -> float:
+        surface_area = 0
+        for surface in self.surfaces:
+            surface_area += surface.area(self)
+
+        return surface_area
 
 
 class Cube(Square, SurfaceAreaMixin):
 
-    pass
+    """ Базовый класс Куба от класса Квадрат,
+     Миксин расчета площади поверхности """
 
-    # def __init__(self, side):
-    #     super().__init__(side)
-    #     self.side = self.side.append(Square)
+    def __init__(self, length: int) -> None:
+        super().__init__(length)
+        self.surfaces = [Square, Square, Square, Square, Square, Square]
 
 
 class Pyramid(Triangle, SurfaceAreaMixin):
-    pass
+
+    """ Базовый класс Пирамиды от класса Треугольника,
+     Миксин расчета площади поверхности """
+
+    def __init__(self, base: int, height: int) -> None:
+        super().__init__(base, height)
+        self.length = base
+        self.height = height
+        self.surfaces = [Square, Triangle, Triangle, Triangle, Triangle]
 
 
-a = Square(side=7)
-print(a.square())
-b = Triangle(base=6, height=2)
-print(b.square())
+cube = Cube(length=7)
+print('Площадь поверхности куба:', cube.surface_area())
+cube.new_length = 2
+print('Площадь поверхности куба:', cube.surface_area())
+pyramid = Pyramid(base=6, height=2)
+print('Площадь поверхности пирамиды:', pyramid.surface_area())
+pyramid.new_base = 2
+print('Площадь поверхности пирамиды:', pyramid.surface_area())

@@ -17,11 +17,9 @@ class File:
             self.file_obj = open(self.file_name, 'a', encoding='UTF-8')
         return self.file_obj
 
-    def __exit__(self, exc_type, exc_val, exc_tb) -> None:
-        try:
-            self.file_obj.close()
-        except OSError:
-            print('Невозможно закрыть файл')
+    def __exit__(self, exc_type, exc_val, exc_tb) -> bool:
+        self.file_obj.close()
+        return True
 
 
 with File('example.txt', 'r') as file:
