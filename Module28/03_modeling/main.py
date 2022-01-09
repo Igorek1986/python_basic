@@ -3,21 +3,21 @@ class Square:
     """" Базовый класс квадрата """
 
     def __init__(self, length: int) -> None:
-        self.length = length
+        self._length = length
 
     def perimetr(self) -> int:
-        return self.length * 4
+        return self._length * 4
 
     def area(self) -> int:
-        return self.length ** 2
+        return self._length ** 2
 
     @property
     def new_length(self) -> float:
-        return self.length
+        return self._length
 
     @new_length.setter
     def new_length(self, length: int):
-        self.length = length
+        self._length = length
 
 
 class Triangle:
@@ -25,30 +25,30 @@ class Triangle:
     """ Базовый класс треугольника """
 
     def __init__(self, base: int, height: int) -> None:
-        self.base = base
-        self.height = height
+        self._base = base
+        self._height = height
 
     def perimetr(self) -> int:
-        return 2 * self.height + self.base
+        return 2 * self._height + self._base
 
     def area(self) -> float:
-        return 1 / 2 * self.height * self.base
+        return 1 / 2 * self._height * self._base
 
     @property
     def new_base(self) -> float:
-        return self.height
+        return self._height
 
     @new_base.setter
     def new_base(self, base: int):
-        self.base = base
+        self._base = base
 
     @property
     def new_height(self) -> float:
-        return self.height
+        return self._height
 
     @new_height.setter
     def new_height(self, height: int):
-        self.height = height
+        self._height = height
 
 
 class SurfaceAreaMixin:
@@ -78,8 +78,8 @@ class Pyramid(Triangle, SurfaceAreaMixin):
 
     def __init__(self, base: int, height: int) -> None:
         super().__init__(base, height)
-        self.length = base
-        self.height = height
+        self._length = base
+        self._height = height
         self.surfaces = [Square, Triangle, Triangle, Triangle, Triangle]
 
 
