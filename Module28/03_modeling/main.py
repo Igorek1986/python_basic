@@ -1,5 +1,4 @@
 class Square:
-
     """" Базовый класс квадрата """
 
     def __init__(self, length: int) -> None:
@@ -21,7 +20,6 @@ class Square:
 
 
 class Triangle:
-
     """ Базовый класс треугольника """
 
     def __init__(self, base: int, height: int) -> None:
@@ -62,17 +60,16 @@ class SurfaceAreaMixin:
 
 
 class Cube(Square, SurfaceAreaMixin):
-
     """ Базовый класс Куба от класса Квадрат,
      Миксин расчета площади поверхности """
 
     def __init__(self, length: int) -> None:
         super().__init__(length)
+        # TODO Список сторон должен состоять из объектов Класса(), но не из Класса. =)
         self.surfaces = [Square, Square, Square, Square, Square, Square]
 
 
 class Pyramid(Triangle, SurfaceAreaMixin):
-
     """ Базовый класс Пирамиды от класса Треугольника,
      Миксин расчета площади поверхности """
 
@@ -91,3 +88,5 @@ pyramid = Pyramid(base=6, height=2)
 print('Площадь поверхности пирамиды:', pyramid.surface_area())
 pyramid.new_base = 2
 print('Площадь поверхности пирамиды:', pyramid.surface_area())
+
+# зачёт!

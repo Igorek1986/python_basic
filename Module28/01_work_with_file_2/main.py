@@ -24,3 +24,5 @@ class File:
 
 with File('example.txt', 'r') as file:
     file.write('Всем привет!\n')
+
+# зачёт!
