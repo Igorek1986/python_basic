@@ -34,3 +34,32 @@ print(Date.is_date_valid('40-12-2077'))
 # False
 
 # зачёт!
+
+# Home parsing
+
+
+# class Date:
+#     def __init__(self, day: int = 0, mount: int = 0, year: int = 0) -> None:
+#         self.day = day
+#         self.mount = mount
+#         self.year = year
+#
+#     def __str__(self) -> str:
+#         return f'День: {self.day}\tМесяц: {self.mount}\tГод: {self.year}'
+#
+#     @classmethod
+#     def is_date_valid(cls, date_str: str) -> bool:
+#         day, mount, year = map(int, date_str.split('-'))
+#         return 0 < day <= 31 and 0 < mount <= 12 and 0 < year
+#
+#     @classmethod
+#     def from_string(cls, date_str: str) -> 'Date':
+#         day, mount, year = map(int, date_str.split('-'))
+#         date_obj = cls(day, mount, year)
+#         return date_obj
+#
+#
+# date = Date.from_string('10-12-2077')
+# print(date)
+# print(Date.is_date_valid('10-12-2077'))
+# print(Date.is_date_valid('40-12-2077'))

@@ -65,8 +65,9 @@ class Cube(Square, SurfaceAreaMixin):
 
     def __init__(self, length: int) -> None:
         super().__init__(length)
-        # TODO Список сторон должен состоять из объектов Класса(), но не из Класса. =)
-        self.surfaces = [Square, Square, Square, Square, Square, Square]
+        square = Square
+        # Список сторон должен состоять из объектов Класса(), но не из Класса. =)
+        self.surfaces = [square, square, square, square, square, square]
 
 
 class Pyramid(Triangle, SurfaceAreaMixin):
@@ -77,7 +78,9 @@ class Pyramid(Triangle, SurfaceAreaMixin):
         super().__init__(base, height)
         self._length = base
         self._height = height
-        self.surfaces = [Square, Triangle, Triangle, Triangle, Triangle]
+        square = Square
+        triangle = Triangle
+        self.surfaces = [square, triangle, triangle, triangle, triangle]
 
 
 cube = Cube(length=7)
