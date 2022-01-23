@@ -10,6 +10,10 @@ def check_permission(name: str = 'user') -> Callable:
         @functools.wraps(func)
         def wrapper_check(*args, **kwargs):
             try:
+                # TODO, пожалуйста, обратите внимание, ловить исключения в этом задании не нужно.
+                #  Только вызвать. Код должен завершиться ошибкой, если пользователя нет в списке user_permissions.
+
+                # TODO, нам необходимо проверить наличие name в локальной переменной user_permissions.
                 if name == 'admin':
                     return func(*args, **kwargs)
                 raise PermissionError('PermissionError')
