@@ -4,12 +4,15 @@ app = {}
 
 
 def callback(key: str) -> Callable:
-    def call_f(func):
+    """ Декоратор. Проверяет ответ сервера. """
+    def check(func):
+        app[key] = func
+
         @functools.wraps(func)
-        def wrapper():
-            app[key] = func
+        def wrapper(*args, **kwargs):
+            return func(*args, **kwargs)
         return wrapper
-    return call_f
+    return check
 
 
 @callback('//')
@@ -19,7 +22,6 @@ def example():
 
 
 route = app.get('//')
-
 if route:
     response = route()
     print('Ответ:', response)
