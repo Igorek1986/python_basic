@@ -1,17 +1,21 @@
 from typing import Callable
 import functools
+
 app = {}
 
 
 def callback(key: str) -> Callable:
     """ Декоратор. Проверяет ответ сервера. """
+
     def check(func):
         app[key] = func
 
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
             return func(*args, **kwargs)
+
         return wrapper
+
     return check
 
 
@@ -28,7 +32,8 @@ if route:
 else:
     print('Такого пути нет')
 
-
 # Ожидаемый результат:
 # Пример функции, которая возвращает ответ сервера
 # Ответ: OK
+
+# зачёт!
