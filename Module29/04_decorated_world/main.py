@@ -2,31 +2,26 @@ from typing import Callable
 import functools
 
 
-def decorator_with_args_for_any_decorator(decorator):
+def decorator_with_args_for_any_decorator(decorator: Callable) -> Callable:
+    """ Декоратор принимающий декоратор.
+    С произвольным кол-вом аргументов """
 
-    def decorate():
-        def info(*args, **kwargs):
-            print(*args)
-            return decorator(*args, **kwargs)
-        return info
-    return decorate
+    def decorator_maker(*args, **kwargs):
+        @functools.wraps(decorator)
+        def decorator_wrapper(func):
+            return decorator(func, *args, **kwargs)
+        return decorator_wrapper
+    return decorator_maker
 
 
-# @decorator_with_args_for_any_decorator
-# def decorated_decorator(func: Callable, *args, **kwargs): # отсюда уже сами!
+@decorator_with_args_for_any_decorator
+def decorated_decorator(func: Callable, *args, **kwargs):
+    """ Декоратор декорируемый другим декоратором """
 
-def decorated_decorator(func: Callable, *args, **kwargs): # отсюда уже сами!
-    print('Переданные арги и кварги в декоратор:', args, kwargs)
-
-    def wrapper():
-
-        func(*args, **kwargs)
-
-        @functools.wraps(func)
-        def wrapped():
-            func(*args, **kwargs)
-
-        return wrapped
+    @functools.wraps(func)
+    def wrapper(func_arg1, func_arg2):
+        print('Переданные арги и кварги в декоратор:', args, kwargs)
+        return func(func_arg1, func_arg2)
 
     return wrapper
 
@@ -36,7 +31,7 @@ def decorated_function(text: str, num: int) -> None:
     print("Привет", text, num)
 
 
-# decorated_function("Юзер", 101)
+decorated_function("Юзер", 101)
 
 
 # Переданные арги и кварги в декоратор: (100, 'рублей', 200, 'друзей') {}
