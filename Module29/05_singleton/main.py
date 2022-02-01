@@ -12,6 +12,7 @@ def singleton(cls: Callable) -> Callable:
         if cls not in instances:
             instances[cls] = cls(*args, **kwargs)
         return instances[cls]
+
     return wrapper
 
 
@@ -28,7 +29,8 @@ print(id(my_another_obj))
 
 print(my_obj is my_another_obj)
 
-
 # 1986890616688
 # 1986890616688
 # True
+
+# зачёт!
