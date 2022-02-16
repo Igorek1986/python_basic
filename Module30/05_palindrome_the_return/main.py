@@ -10,3 +10,5 @@ if __name__ == '__main__':
 
     print(can_be_poly("ababc"))
     print(can_be_poly("abbbc"))
+
+# зачёт!

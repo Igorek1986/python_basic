@@ -13,3 +13,5 @@ if __name__ == '__main__':
     print(floats_new)
     print(names_new)
     print(numbers_new)
+
+# зачёт!
