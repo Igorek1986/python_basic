@@ -2,14 +2,14 @@ import re
 
 
 if __name__ == '__main__':
-    text = 'А578ВЕ777 ОР233787 К901МН666 СТ46599 СНИ2929П777 666АМР666'
+    text = 'A578ВЕ777 ОР233787 К901МН666 СТ46599 СНИ2929П777 666АМР666'
 
     # TODO, пожалуйста, обратите внимание, не каждая буква может быть в номере. =)
     #  Вместо \w стоит перечислить буквы А, В, Е, К, М, Н, О, Р, С, Т, У и Х.
-    pattern_auto = re.findall(r'\b\w\d{3}\w{2}\d{2,3}', text)
+    pattern_auto = re.findall(r'\b[ABEKMHOPCTYXАВЕКМНОРСТУХ]\d{3}\w{2}\d{2,3}', text)
     print('Список номеров частных автомобилей:', pattern_auto)
 
-    pattern_taxi = re.findall(r'\b\w{2}\d{5,6}', text)
+    pattern_taxi = re.findall(r'\b[ABEKMHOPCTYXАВЕКМНОРСТУХ]{2}\d{5,6}', text)
     print('Список номеров такси:', pattern_taxi)
 
 # Результат:

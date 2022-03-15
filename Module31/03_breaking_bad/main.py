@@ -7,28 +7,20 @@ if __name__ == '__main__':
     response_deaths = requests.get('https://www.breakingbadapi.com/api/deaths')
 
 
-    # TODO, предлагаю упростить выборку словаря с максимальным количеством смертей.
-    #  Стоит передать список словарей deaths в функцию max, если в параметр key функции передать lambda функцию,
-    #  То, сможет найти словарь с максимальным значением по интересующему нас ключу в одну строку кода.
-
-    def info_for_serial_deaths(data_serial: list, result={}) -> Dict:
-
-        # TODO, для сокращения количества вычислений элементов по индексам, предлагаю в этом цикле идти сразу по массиву без конструкции range + len.
-        for i in range(len(data_serial)):
-            if data_serial[i]['number_of_deaths'] > result.get('number_of_deaths', 0):
-                result = {'episode_id': None, 'season': data_serial[i]['season'], 'episode': data_serial[i]['episode'],
-                          'number_of_deaths': data_serial[i]['number_of_deaths'], 'death': data_serial[i]['death']}
+    def info_for_serial_deaths(data_serial: list) -> Dict:
+        result = max(data_serial, key=lambda x: x['number_of_deaths'])
+        result = {'episode_id': None, 'season': result['season'], 'episode': result['episode'],
+                  'number_of_deaths': result['number_of_deaths'], 'death': result['death']}
 
         return result
 
 
     def info_for_serial(data_serial: list, result={}) -> Dict:
 
-        # TODO, для сокращения количества вычислений элементов по индексам, предлагаю в этом цикле идти сразу по массиву без конструкции range + len.
-        for i in range(len(data_serial)):
+        for i, v in enumerate(data_serial):
             episode = result['episode']
             season = result['season']
-            if int(data_serial[i]['season']) == season and int(data_serial[i]['episode']) == episode:
+            if int(v['season']) == season and int(v['episode']) == episode:
                 result['episode_id'] = data_serial[i]['episode_id']
 
         return result
