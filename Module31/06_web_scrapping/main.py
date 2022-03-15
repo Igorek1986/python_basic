@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 from typing import List
 
-
 if __name__ == '__main__':
     def parsing_html(url: str) -> List[str]:
         response = requests.get(url)
@@ -13,3 +12,5 @@ if __name__ == '__main__':
 
     header_lst = parsing_html('http://www.columbia.edu/~fdc/sample.html')
     print(header_lst)
+
+# зачёт!

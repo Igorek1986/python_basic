@@ -32,3 +32,5 @@ if __name__ == '__main__':
 
     with open('death_dict.json', 'w') as file:
         json.dump(info_serial, file, indent=4)
+
+# зачёт!
