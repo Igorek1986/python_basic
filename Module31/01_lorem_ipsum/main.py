@@ -10,6 +10,7 @@ if __name__ == '__main__':
     result = re.findall(r'\b\w{4}\b', text)
     print(result)
 
-
 # Результат:
 # ['amet', 'elit', 'eget', 'quam', 'quis', 'quis', 'enim', 'pede']
+
+# зачёт!

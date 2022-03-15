@@ -8,6 +8,8 @@ if __name__ == '__main__':
         soup = BeautifulSoup(response.text, 'lxml')
         text = soup.find_all('h3')
 
+
+        # TODO, предлагаю упростить строки ниже до одной строки кода List comprehensions.
         for elem in text:
             result.append(elem.next_element)
 

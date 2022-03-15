@@ -5,3 +5,5 @@ if __name__ == '__main__':
     pincode_vars = itertools.product(digits, repeat=4)
     for var in pincode_vars:
         print(var)
+
+# зачёт!
